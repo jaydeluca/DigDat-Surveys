@@ -43,7 +43,7 @@
       return {
         submitted: false,
         dataLoading: false,
-        survey_id: 1,
+        survey_id: 2,
         survey: {},
 
       }

@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Survey;
 use App\Questions;
 
-class Survey1Seeder extends Seeder
+class Patriots1Seeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,12 +13,11 @@ class Survey1Seeder extends Seeder
      */
     public function run()
     {
-
-        $data = File::get('database/data/questions-1.json');
+        $data = File::get('database/data/patriots.json');
         $questions = json_decode($data);
 
         $survey = Survey::create([
-            'name' => "Football Teams"
+            'name' => "Patriots Survey"
         ]);
 
         foreach ($questions as $question) {

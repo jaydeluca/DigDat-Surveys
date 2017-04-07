@@ -1,0 +1,19 @@
+[
+  {
+    "question": "Which is your favorite NFL team?",
+    "options": [
+      "Arizona Cardinals",
+      "Atlanta Falcons",
+      "Baltimore Ravens",
+      "Buffalo Bills",
+      "Carolina Panthers"
+    ]
+  },
+  {
+    "question": "Is your favorite team also the home team for where you currently live?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  }
+]
