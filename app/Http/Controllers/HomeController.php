@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $surveys = Survey::with('submissions')->first();
+        $surveys = Survey::with('submissions')->get();
 
         return view('home')->with(compact('surveys'));
     }

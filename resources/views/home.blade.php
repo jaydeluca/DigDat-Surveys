@@ -7,7 +7,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
-                    {{ $surveys->name }} Submissions: {{ count($surveys->submissions) }}
+                    <ul>
+                        @foreach ($surveys as $survey)
+                            <li>{{ $survey->name }} Submissions: {{ count($survey->submissions) }}</li>
+                        @endforeach
+                    </ul>
+
                 </div>
             </div>
         </div>
