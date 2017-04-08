@@ -14,6 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('survey', require('./components/Survey1.vue'));
+Vue.component('results', require('./components/Results.vue'));
 
 const app = new Vue({
     el: '#app'

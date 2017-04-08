@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Survey;
 use App\Submission;
 use App\Answers;
+use JavaScript;
 
 class SurveyController extends Controller
 {
+
 
     public function show(Survey $id)
     {
@@ -32,7 +34,16 @@ class SurveyController extends Controller
             ]));
 
         }
+    }
+
+    public function resultsPage(Survey $survey)
+    {
 
 
+        JavaScript::put([
+            'survey' => $survey
+        ]);
+
+        return view('results');
     }
 }

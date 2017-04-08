@@ -26,6 +26,7 @@ class HomeController extends Controller
     {
         $surveys = Survey::with('submissions')->get();
 
+
         return view('home')->with(compact('surveys'));
     }
 }

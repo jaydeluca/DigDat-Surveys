@@ -9,10 +9,14 @@
                 <div class="panel-body">
                     <ul>
                         @foreach ($surveys as $survey)
-                            <li>{{ $survey->name }} Submissions: {{ count($survey->submissions) }}</li>
+                            <li>
+                                <a href="/results/{{ $survey->id }}">
+                                    {{ $survey->name }} Submissions: {{ count($survey->submissions) }}
+                                </a>
+                            </li>
                         @endforeach
                     </ul>
-
+                    <hr>
                 </div>
             </div>
         </div>
