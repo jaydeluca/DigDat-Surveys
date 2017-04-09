@@ -19,20 +19,13 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-10 col-lg-offset-1">
-                                    <table class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th colspan="2">Top Referrers</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr v-for="referrer in referrers">
-                                            <td>{{ referrer.url }}</td>
-                                            <td>{{ referrer.pageViews }}</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="col-sm-12">
+                                    <div v-for="(referrer, index) in referrers"
+                                         class="referrer"
+                                         :class="{ 'alternate-question': isEven(index)}">
+                                            <div>{{ referrer.url }}</div>
+                                            <div>{{ referrer.pageViews }}</div>
+                                    </div>
                                 </div>
                             </div>
 
