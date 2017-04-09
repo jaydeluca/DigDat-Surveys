@@ -7,6 +7,8 @@ use App\Survey;
 use App\Submission;
 use App\Answers;
 use JavaScript;
+use Analytics;
+use Spatie\Analytics\Period;
 
 class SurveyController extends Controller
 {
@@ -41,7 +43,9 @@ class SurveyController extends Controller
 
 
         JavaScript::put([
-            'survey' => $survey
+            'survey' => $survey,
+            'submissions' => $survey->submissions()->count(),
+            'referrers' => Analytics::fetchTopReferrers(Period::days(90))
         ]);
 
         return view('results');
