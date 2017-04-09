@@ -21,4 +21,5 @@ Note: This file is not, and should not be version controlled, so you **will need
 - Integrate Google Analytics more specific (stats per survey as opposed to per account)
 - Email Reporting
 - Layout overhaul
+- Survey Page Titles
 - Make Google Analytics aspect optional and more customizable within the application

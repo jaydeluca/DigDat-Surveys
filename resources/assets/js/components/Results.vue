@@ -20,6 +20,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-12">
+                                    <strong>Referrals:</strong>
                                     <div v-for="(referrer, index) in referrers"
                                          class="referrer"
                                          :class="{ 'alternate-question': isEven(index)}">
