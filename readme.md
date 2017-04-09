@@ -13,7 +13,19 @@ add it to the project at: storage/app/laravel-google-analytics/service-account-c
 
 Note: This file is not, and should not be version controlled, so you **will need** to manually add it.
 
+### Creating a form
+Currently just using JSON until the GUI is done.
 
+Ex:
+```
+  {
+    "question": "There is no spoon?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  }
+```
 
 ## TODO
 - Survey GUI/CRUD
