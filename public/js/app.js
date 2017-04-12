@@ -1966,6 +1966,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
   methods: {
+    percentageCalc: function percentageCalc(value, total) {
+      return Math.round(value / total * 100);
+    },
     isEven: function isEven(index) {
       return index % 2 === 0;
     },
@@ -1975,7 +1978,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.dataLoading = true;
       var survey_id = this.survey.id;
       axios.get('/api/answers/' + survey_id).then(function (res) {
-        _this.questions = res.data;
+        var questions = res.data;
+        questions.forEach(function (item) {
+          var total = 0;
+          item.options.forEach(function (item) {
+            total += item.count;
+          });
+          item.total = total;
+        });
+
+        _this.questions = questions;
         _this.dataLoading = false;
       });
     }
@@ -31982,7 +31994,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, _vm._l((question.options), function(option) {
       return _c('div', {
         staticClass: "col-md-3 well well-sm answer"
-      }, [_vm._v("\n                                    " + _vm._s(option.option) + "\n                                    "), _c('strong', [_vm._v(_vm._s(option.count))])])
+      }, [_vm._v("\n                                    " + _vm._s(option.option) + "\n                                    "), _c('strong', [_vm._v(_vm._s(option.count) + " (" + _vm._s(_vm.percentageCalc(option.count, question.total)) + "%)")])])
     }))], 1)
   }))])]], 2)])])
 },staticRenderFns: []}

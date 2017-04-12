@@ -45,7 +45,7 @@
                                 <div class="row answers">
                                     <div class="col-md-3 well well-sm answer" v-for="option in question.options">
                                         {{ option.option }}
-                                        <strong>{{ option.count }}</strong>
+                                        <strong>{{ option.count }} ({{ percentageCalc(option.count, question.total) }}%)</strong>
                                     </div>
                                 </div>
 
@@ -79,6 +79,10 @@
 
     methods: {
 
+      percentageCalc(value, total) {
+        return Math.round((value/total)*100);
+      },
+
       isEven(index) {
         return index%2 === 0;
       },
@@ -87,7 +91,16 @@
         this.dataLoading = true;
         let survey_id = this.survey.id;
         axios.get('/api/answers/'+survey_id).then(res => {
-            this.questions = res.data;
+            let questions = res.data;
+            questions.forEach(item => {
+              let total = 0;
+              item.options.forEach(item => {
+                total += item.count;
+              });
+              item.total = total;
+            });
+
+            this.questions = questions
             this.dataLoading = false;
         })
 
