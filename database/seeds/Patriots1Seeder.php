@@ -17,6 +17,7 @@ class Patriots1Seeder extends Seeder
         $questions = json_decode($data);
 
         $survey = Survey::create([
+            'user_id' => 1,
             'name' => "Patriots Survey"
         ]);
 

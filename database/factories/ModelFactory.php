@@ -22,3 +22,27 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(App\Survey::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => function () {
+            return factory('App\User')->create()->id;
+        },
+        'name' => $faker->streetName
+    ];
+});
+
+$factory->define(App\Questions::class, function (Faker\Generator $faker) {
+    return [
+        'question' => $faker->sentence . "?",
+        'options' => json_encode($faker->shuffleArray([
+            "Arizona Cardinals",
+            "Atlanta Falcons",
+            "Baltimore Ravens",
+            "Buffalo Bills",
+            "Carolina Panthers"
+        ]))
+    ];
+
+});

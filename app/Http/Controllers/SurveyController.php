@@ -13,12 +13,28 @@ use Spatie\Analytics\Period;
 class SurveyController extends Controller
 {
 
+    /**
+     * Public facing welcome page with list of recent surveys
+     */
+    public function welcome()
+    {
+        $surveys = Survey::with('submissions')->get();
+        return view('welcome')->with(compact('surveys'));
+    }
 
+    /**
+     * Show individual Survey
+     */
     public function show(Survey $id)
     {
         return Survey::with('questions')->find($id);
     }
 
+    /**
+     * Survey Submission Processing (sent via ajax)
+     *
+     * @param Request $request
+     */
     public function submit(Request $request)
     {
         $data = $request->all();
@@ -38,10 +54,14 @@ class SurveyController extends Controller
         }
     }
 
+    /**
+     * Show the Results of a Survey
+     *
+     * @param Survey $survey
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function resultsPage(Survey $survey)
     {
-
-
         JavaScript::put([
             'survey' => $survey,
             'submissions' => $survey->submissions()->count(),

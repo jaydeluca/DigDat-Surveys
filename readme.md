@@ -28,10 +28,12 @@ Ex:
 ```
 
 ## TODO
+- Associate Surveys with users (in progress)
 - Survey GUI/CRUD
 - Survey URLS
 - Integrate Google Analytics more specific (stats per survey as opposed to per account)
 - Email Reporting
 - Layout overhaul
 - Survey Page Titles
+- Public / Private?
 - Make Google Analytics aspect optional and more customizable within the application

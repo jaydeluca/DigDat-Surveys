@@ -11,11 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SurveyController@welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::middleware('auth')->get('/results/{survey}', 'SurveyController@resultsPage');
+Route::get('/survey/{id}', 'SurveyController@show');
