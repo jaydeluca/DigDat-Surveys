@@ -2046,9 +2046,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       submitted: false,
       dataLoading: false,
-      survey_id: 2,
+      survey_id: window.survey.id,
       survey: {}
-
     };
   },
   created: function created() {
@@ -2077,8 +2076,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this2 = this;
 
       var data = this.survey;
-      axios.post('api/survey/submit', data).then(function (res) {
-        console.log(res.data);
+      axios.post('/api/survey/submit', data).then(function (res) {
         _this2.submitted = true;
       });
     }
@@ -31922,9 +31920,9 @@ var Component = __webpack_require__(8)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/jaydeluca/code/ECSurvey/resources/assets/js/components/Survey1.vue"
+Component.options.__file = "/Users/jaydeluca/code/ECSurvey/resources/assets/js/components/TakeSurvey.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Survey1.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] TakeSurvey.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -31933,9 +31931,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ad966d4a", Component.options)
+    hotAPI.createRecord("data-v-fb8c09a6", Component.options)
   } else {
-    hotAPI.reload("data-v-ad966d4a", Component.options)
+    hotAPI.reload("data-v-fb8c09a6", Component.options)
   }
 })()}
 
@@ -32065,7 +32063,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-ad966d4a", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-fb8c09a6", module.exports)
   }
 }
 

@@ -7,15 +7,28 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Latest Surveys</div>
                     <div class="panel-body">
-                        <ul>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Survey</th>
+                                <th>Questions</th>
+                                <th>Submissions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
                             @foreach ($surveys as $survey)
-                                <li>
-                                    <a href="/survey/{{ $survey->id }}">
-                                        {{ $survey->name }} Submissions: {{ count($survey->submissions) }}
-                                    </a>
-                                </li>
+                                <tr>
+                                    <td>
+                                        <a href="/survey/{{ $survey->id }}">
+                                            {{ $survey->name }}
+                                        </a>
+                                    </td>
+                                    <td>{{ count($survey->questions) }}</td>
+                                    <td>{{ count($survey->submissions) }}</td>
+                                </tr>
                             @endforeach
-                        </ul>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>

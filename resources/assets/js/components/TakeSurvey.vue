@@ -43,12 +43,10 @@
       return {
         submitted: false,
         dataLoading: false,
-        survey_id: 2,
+        survey_id: window.survey.id,
         survey: {},
-
       }
     },
-
 
     created() {
       this.getSurvey();
@@ -74,12 +72,9 @@
 
       submitSurvey() {
         let data = this.survey;
-        axios.post('api/survey/submit', data).then(res => {
-            console.log(res.data);
+        axios.post('/api/survey/submit', data).then(res => {
             this.submitted = true;
         })
-
-
       }
 
     }

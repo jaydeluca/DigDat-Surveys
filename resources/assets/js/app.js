@@ -13,7 +13,7 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('survey', require('./components/Survey1.vue'));
+Vue.component('survey', require('./components/TakeSurvey.vue'));
 Vue.component('results', require('./components/Results.vue'));
 
 const app = new Vue({

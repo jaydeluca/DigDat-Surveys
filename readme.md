@@ -29,11 +29,21 @@ Ex:
 
 ## TODO
 - Associate Surveys with users (in progress)
-- Survey GUI/CRUD
+- Add Survey status - maybe optional expiration date?
+- Survey GUI/CRUD for creating surveys
 - Survey URLS
 - Integrate Google Analytics more specific (stats per survey as opposed to per account)
 - Email Reporting
-- Layout overhaul
+- Layout overhaul: get some love from Eric
 - Survey Page Titles
 - Public / Private?
 - Make Google Analytics aspect optional and more customizable within the application
+- Users can 'subscribe' to surveys. When survey is completed, they can get an email with results
+
+## Pages
+- Survey Create (must be logged in)
+- Survey Edit (must be logged in)
+- Survey Results (must be logged in)
+- Survey Display (public)
+- Home Page (public)
+  - List of recent surveys? or most popular?

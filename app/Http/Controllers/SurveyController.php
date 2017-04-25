@@ -18,7 +18,7 @@ class SurveyController extends Controller
      */
     public function welcome()
     {
-        $surveys = Survey::with('submissions')->get();
+        $surveys = Survey::with(['submissions', 'questions'])->get();
         return view('welcome')->with(compact('surveys'));
     }
 
@@ -27,7 +27,11 @@ class SurveyController extends Controller
      */
     public function show(Survey $id)
     {
-        return Survey::with('questions')->find($id);
+        JavaScript::put([
+            'survey' => $id,
+        ]);
+
+        return view('take-survey');
     }
 
     /**

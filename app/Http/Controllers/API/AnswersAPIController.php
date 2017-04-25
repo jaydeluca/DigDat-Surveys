@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Survey;
-use App\Submission;
 use App\Answers;
 use App\Questions;
 use App\Http\Controllers\Controller;
@@ -12,12 +11,16 @@ use App\Http\Controllers\Controller;
 class AnswersAPIController extends Controller
 {
 
-
+    /**
+     * Get answers by Survey, formatted for view
+     *
+     * @param Survey $id
+     * @return mixed
+     */
     public function show(Survey $id)
     {
 
         // questions
-
         $questions = Questions::where('survey_id', $id->id)->get()->map(function ($item) {
             return collect($item)->only(['question', 'options']);
         });
@@ -32,8 +35,6 @@ class AnswersAPIController extends Controller
         }
 
         return $questions;
-
     }
-
 
 }

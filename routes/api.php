@@ -17,11 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('survey/{id}', 'SurveyController@show');
+
 Route::post('survey/submit', 'SurveyController@submit');
 
 Route::group([
     'namespace' => 'API',
 ], function () {
+    Route::get('survey/{id}', 'SurveyAPIController@show');
     Route::get('answers/{id}', 'AnswersAPIController@show');
 });
