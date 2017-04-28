@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -20,9 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $surveys = Survey::with('submissions')->get();
+        $surveys = Survey::all();
 
-        return view('home')->with(compact('surveys'));
+        return view('welcome')->with(compact('surveys'));
     }
 
 }

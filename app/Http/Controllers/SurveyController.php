@@ -16,10 +16,10 @@ class SurveyController extends Controller
     /**
      * Public facing welcome page with list of recent surveys
      */
-    public function welcome()
+    public function index()
     {
         $surveys = Survey::with(['submissions', 'questions'])->get();
-        return view('welcome')->with(compact('surveys'));
+        return view('surveys')->with(compact('surveys'));
     }
 
     /**

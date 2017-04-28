@@ -11,10 +11,21 @@
 |
 */
 
-Route::get('/', 'SurveyController@welcome');
+// Public Routes
+Route::get('/', 'HomeController@index');
+
+Route::get('/surveys', 'SurveyController@index');
+Route::get('/surveys/{id}', 'SurveyController@show');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::middleware('auth')->get('/results/{survey}', 'SurveyController@resultsPage');
-Route::get('/survey/{id}', 'SurveyController@show');
+// Must be logged in
+Route::group(['middleware' => 'auth'], function () {
+
+    // Surveys
+    Route::get('/results/{survey}', 'SurveyController@resultsPage');
+
+    Route::get('/home', 'HomeController@home');
+
+});
+

@@ -47,3 +47,8 @@ Ex:
 - Survey Display (public)
 - Home Page (public)
   - List of recent surveys? or most popular?
+
+
+## Tests to write
+- Non-logged in users see prompt to register when trying to view results
+- Registered users can see survey results

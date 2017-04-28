@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
         Spatie\Analytics\AnalyticsServiceProvider::class,
+        Laravel\Dusk\DuskServiceProvider::class,
 
         /*
          * Application Service Providers...
