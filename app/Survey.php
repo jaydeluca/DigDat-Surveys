@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use Carbon\Carbon;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,5 +21,11 @@ class Survey extends Model
     {
         return $this->hasMany('App\Submission');
     }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return $this->attributes['created_at'] = Carbon::parse($value)->diffForHumans();
+    }
+
 
 }

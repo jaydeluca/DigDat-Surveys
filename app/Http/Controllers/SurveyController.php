@@ -31,7 +31,7 @@ class SurveyController extends Controller
             'survey' => $id,
         ]);
 
-        return view('take-survey');
+        return view('pages.take-survey');
     }
 
     /**

@@ -10,20 +10,19 @@
 @import "node_modules/bulma/bulma.sass";
 
 * {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway";
 }
 
 // Components
 @import "./components/boards";
 @import "./components/forms";
+@import "./components/surveys";
 
 // Overwrites
 @import "overwrites";
 
 
 .question {
-  padding: 10px;
-  border: 1px solid #ddd;
 
   .question-text {
     font-size: 18px;

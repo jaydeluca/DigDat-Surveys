@@ -1,0 +1,16 @@
+.survey {
+
+  .product-header {
+    background-color:#fafafa;
+  }
+
+  .questions {
+    .question {
+      border-bottom: 1px solid $color-light-grey;
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+}

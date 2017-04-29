@@ -1871,6 +1871,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -19376,23 +19382,35 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
+    staticClass: "container survey"
+  }, [(_vm.dataLoading) ? [_c('div', {
+    staticClass: "card-content"
+  }, [_vm._v("\n            Loading...\n        ")])] : [_c('div', {
+    staticClass: "section product-header"
+  }, [_c('div', {
     staticClass: "container"
   }, [_c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column"
+  }, [_c('span', {
+    staticClass: "title is-3"
+  }, [_vm._v(_vm._s(_vm.survey.name))]), _vm._v(" "), _c('span', {
+    staticClass: "title is-3 has-text-muted"
+  }, [_vm._v(" | ")]), _vm._v(" "), _c('span', {
+    staticClass: "title is-4 has-text-muted"
+  }, [_vm._v("Created " + _vm._s(_vm.survey.created_at))])])])])]), _vm._v(" "), _c('div', {
     staticClass: "section"
   }, [_c('div', {
     staticClass: "card"
-  }, [(_vm.dataLoading) ? [_c('div', {
-    staticClass: "card-content"
-  }, [_vm._v("\n                    Loading...\n                ")])] : [_c('div', {
-    staticClass: "card-header"
-  }, [_c('p', {
-    staticClass: "card-header-title"
-  }, [_vm._v("\n                        " + _vm._s(_vm.survey.name) + "\n                    ")])]), _vm._v(" "), _c('div', {
-    staticClass: "card-content"
-  }, [(_vm.submitted) ? [_vm._v("\n                        Thanks!\n                    ")] : [_vm._l((_vm.survey.questions), function(question) {
+  }, [_c('div', {
+    staticClass: "card-content questions"
+  }, [(_vm.submitted) ? [_vm._v("\n                        Thanks!\n                    ")] : _vm._l((_vm.survey.questions), function(question) {
     return _c('div', {
-      staticClass: "question"
-    }, [_c('p', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('select', {
+      staticClass: "section question"
+    }, [_c('p', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('span', {
+      staticClass: "select"
+    }, [_c('select', {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -19416,26 +19434,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("Select An Answer")]), _vm._v(" "), _vm._l((question.options), function(option) {
       return _c('option', [_vm._v(_vm._s(option))])
-    })], 2)])
-  }), _vm._v(" "), _c('button', {
-    staticClass: "btn",
-    attrs: {
-      "type": "button"
-    },
-    on: {
-      "click": _vm.submitSurvey
-    }
-  }, [_vm._v("Submit")])]], 2), _vm._v(" "), _c('div', {
+    })], 2)])])
+  })], 2), _vm._v(" "), _c('div', {
     staticClass: "card-footer"
   }, [_c('button', {
-    staticClass: "btn",
+    staticClass: "button is-fullwidth is-primary",
     attrs: {
       "type": "button"
     },
     on: {
       "click": _vm.submitSurvey
     }
-  }, [_vm._v("Submit")])])]], 2)])])
+  }, [_vm._v("Submit")])])])])]], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
