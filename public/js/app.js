@@ -1864,6 +1864,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -19371,16 +19378,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "container"
   }, [_c('div', {
-    staticClass: "row"
+    staticClass: "section"
   }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [(_vm.dataLoading) ? [_vm._v("\n                Loading...\n            ")] : [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v(_vm._s(_vm.survey.name))]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [(_vm.submitted) ? [_vm._v("\n                            Thanks!\n                        ")] : [_vm._l((_vm.survey.questions), function(question) {
+    staticClass: "card"
+  }, [(_vm.dataLoading) ? [_c('div', {
+    staticClass: "card-content"
+  }, [_vm._v("\n                    Loading...\n                ")])] : [_c('div', {
+    staticClass: "card-header"
+  }, [_c('p', {
+    staticClass: "card-header-title"
+  }, [_vm._v("\n                        " + _vm._s(_vm.survey.name) + "\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "card-content"
+  }, [(_vm.submitted) ? [_vm._v("\n                        Thanks!\n                    ")] : [_vm._l((_vm.survey.questions), function(question) {
     return _c('div', {
       staticClass: "question"
     }, [_c('p', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('select', {
@@ -19416,7 +19425,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.submitSurvey
     }
-  }, [_vm._v("Submit")])]], 2)])]], 2)])])
+  }, [_vm._v("Submit")])]], 2), _vm._v(" "), _c('div', {
+    staticClass: "card-footer"
+  }, [_c('button', {
+    staticClass: "btn",
+    attrs: {
+      "type": "button"
+    },
+    on: {
+      "click": _vm.submitSurvey
+    }
+  }, [_vm._v("Submit")])])]], 2)])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

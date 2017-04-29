@@ -1,38 +1,45 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-
+        <div class="section">
+            <div class="card">
                 <template v-if="dataLoading">
-                    Loading...
-                </template>
-
-                <template v-else>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">{{ survey.name }}</div>
-
-                        <div class="panel-body">
-
-                            <template v-if="submitted">
-                                Thanks!
-                            </template>
-
-                            <template v-else>
-                                <div v-for="question in survey.questions" class="question">
-                                    <p>{{ question.question }}</p>
-                                    <select v-model="question.answer">
-                                        <option value="">Select An Answer</option>
-                                        <option v-for="option in question.options">{{ option }}</option>
-                                    </select>
-                                </div>
-                                <button type="button" class="btn" @click="submitSurvey">Submit</button>
-                            </template>
-
-                        </div>
+                    <div class="card-content">
+                        Loading...
                     </div>
                 </template>
 
+                <template v-else>
+                    <div class="card-header">
+                        <p class="card-header-title">
+                            {{ survey.name }}
+                        </p>
+                    </div>
+                    <div class="card-content">
+
+                        <template v-if="submitted">
+                            Thanks!
+                        </template>
+
+                        <template v-else>
+                            <div v-for="question in survey.questions" class="question">
+                                <p>{{ question.question }}</p>
+                                <select v-model="question.answer">
+                                    <option value="">Select An Answer</option>
+                                    <option v-for="option in question.options">{{ option }}</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn" @click="submitSurvey">Submit</button>
+                        </template>
+
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn" @click="submitSurvey">Submit</button>
+                    </div>
+
+
+                </template>
             </div>
+
         </div>
     </div>
 </template>
