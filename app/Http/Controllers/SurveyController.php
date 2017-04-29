@@ -19,7 +19,7 @@ class SurveyController extends Controller
     public function index()
     {
         $surveys = Survey::with(['submissions', 'questions'])->get();
-        return view('surveys')->with(compact('surveys'));
+        return view('pages.surveys')->with(compact('surveys'));
     }
 
     /**

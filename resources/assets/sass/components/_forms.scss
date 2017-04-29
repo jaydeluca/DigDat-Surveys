@@ -1,0 +1,13 @@
+.form-group {
+  margin: 15px 0;
+}
+
+.help-block {
+
+  &:before {
+    content: "* ";
+  }
+
+  color: $color-error;
+
+}

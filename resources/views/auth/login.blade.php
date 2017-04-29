@@ -23,7 +23,6 @@
                                             </span>
                                         @endif
                                     </p>
-                                    <hr>
                                 </div>
 
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -36,7 +35,6 @@
                                             </span>
                                         @endif
                                     </p>
-                                    <hr>
                                 </div>
 
                                 <p class="control">
