@@ -29,6 +29,7 @@ Ex:
 
 ## TODO
 - Associate Surveys with users (in progress)
+- Create an 'Option' Model for question options (adds more flexibility)
 - Add Survey status - maybe optional expiration date?
 - Survey GUI/CRUD for creating surveys
 - Survey URLS

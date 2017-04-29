@@ -20,9 +20,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $surveys = Survey::all();
 
-        return view('welcome')->with(compact('surveys'));
+        // get 3 surveys for front page
+        $surveys = Survey::all()->take(3);
+
+        return view('pages.welcome')->with(compact('surveys'));
     }
 
 }
