@@ -3,7 +3,20 @@ body {
 }
 
 .boards {
-  padding:40px 0;
+  padding: 10px 0;
+
+  ul {
+    li {
+      padding: 5px;
+      border-bottom: 1px solid $color-light-grey;
+
+      &:hover {
+        background: rgba($color-light-grey, 0.2);
+      }
+
+    }
+  }
+
 }
 
 .boards .board .box.is-gray {
@@ -55,3 +68,4 @@ body {
   font-weight: bold;
   font-size: 16px;
 }
+
