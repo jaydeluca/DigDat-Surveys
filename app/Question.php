@@ -28,4 +28,12 @@ class Question extends Model
         return $this->hasMany('App\Option');
     }
 
+    /**
+     * Answers submitted for this question
+     */
+    public function answers()
+    {
+        return $this->hasMany('App\Answer');
+    }
+
 }

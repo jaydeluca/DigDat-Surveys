@@ -53,3 +53,5 @@ Ex:
 ## Tests to write
 - Non-logged in users see prompt to register when trying to view results
 - Registered users can see survey results
+- If logged in user and survey owner, see detailed results link
+- If logged in user and not survey owen, see link for public results
