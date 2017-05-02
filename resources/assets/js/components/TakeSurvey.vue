@@ -41,7 +41,7 @@
                         </template>
 
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" v-if="!submitted">
                         <button type="button" class="button is-fullwidth is-primary" @click="submitSurvey">Submit</button>
                     </div>
                 </div>

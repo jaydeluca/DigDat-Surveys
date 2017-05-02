@@ -4,8 +4,8 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Survey;
-use App\Answers;
-use App\Questions;
+use App\Answer;
+use App\Question;
 use App\Http\Controllers\Controller;
 
 class AnswersAPIController extends Controller
@@ -21,7 +21,7 @@ class AnswersAPIController extends Controller
     {
 
         // questions
-        $questions = Questions::where('survey_id', $id->id)->get()->map(function ($item) {
+        $questions = Question::where('survey_id', $id->id)->get()->map(function ($item) {
             return collect($item)->only(['question', 'options']);
         });
 
@@ -29,7 +29,7 @@ class AnswersAPIController extends Controller
             $question["options"] = collect(json_decode($question["options"]))->map(function ($item) use ($question) {
                 return [
                     'option' => $item,
-                    'count' => Answers::where('question', $question['question'])->where('answer', $item)->count()
+                    'count' => Answer::where('question', $question['question'])->where('answer', $item)->count()
                 ];
             });
         }

@@ -17,6 +17,13 @@ class SurveyTest extends TestCase
         parent::setUp();
 
         $this->survey = factory('App\Survey')->create();
+
+        $this->question = factory('App\Question')->create(['survey_id' => $this->survey->id]);
+
+        $this->question->options()->save([
+            'option' => 'Bengals'
+        ]);
+
     }
 
     /** @test */
@@ -34,16 +41,24 @@ class SurveyTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_see_questions()
+    public function a_survey_has_questions()
     {
-
         // add a question
-        $question = factory('App\Questions')
+        $question = factory('App\Question')
             ->create(['survey_id' => $this->survey->id]);
 
-//        $this->get('/surveys/' . $this->survey->id)
-//            ->assertSee($question->question);
+        $this->assertEquals($this->survey->id, $question->survey_id);
+    }
+
+    /** @test */
+    public function a_question_has_options()
+    {
+
+
+
+
 
     }
+
 
 }

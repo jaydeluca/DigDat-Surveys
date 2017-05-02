@@ -33,7 +33,7 @@ $factory->define(App\Survey::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Questions::class, function (Faker\Generator $faker) {
+$factory->define(App\Question::class, function (Faker\Generator $faker) {
     return [
         'question' => $faker->sentence . "?",
         'options' => json_encode($faker->shuffleArray([

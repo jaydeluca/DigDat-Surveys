@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Survey;
-use App\Questions;
+use App\Question;
 
 class Patriots1Seeder extends Seeder
 {

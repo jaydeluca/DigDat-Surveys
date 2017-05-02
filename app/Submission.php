@@ -14,14 +14,20 @@ class Submission extends Model
         'ip'
     ];
 
-    public function answers()
-    {
-        return $this->hasMany('App\Answers');
-    }
-
+    /**
+     * The survey this submission belongs to
+     */
     public function survey()
     {
         return $this->belongsTo('App\Survey');
+    }
+
+    /**
+     * A submission's answers (responses)
+     */
+    public function answers()
+    {
+        return $this->hasMany('App\Answer');
     }
 
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Survey;
 use App\Submission;
-use App\Answers;
+use App\Answer;
 use JavaScript;
 use Analytics;
 use Spatie\Analytics\Period;
@@ -50,7 +50,7 @@ class SurveyController extends Controller
 
         foreach ($data['questions'] as $question) {
 
-            $submission->answers()->save(new Answers([
+            $submission->answers()->save(new Answer([
                 'question' => $question['question'],
                 'answer' => $question['answer'] ? $question['answer'] : 'n/a'
             ]));

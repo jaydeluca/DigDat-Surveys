@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Questions extends Model
+class Question extends Model
 {
     protected $fillable = [
         'question',
@@ -12,9 +12,20 @@ class Questions extends Model
         'survey_id'
     ];
 
+    /**
+     * What Survey this question is for
+     */
     public function survey()
     {
         return $this->belongsTo('App\Survey');
+    }
+
+    /**
+     * A question's answer options
+     */
+    public function options()
+    {
+        return $this->hasMany('App\Option');
     }
 
 }

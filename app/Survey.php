@@ -12,20 +12,28 @@ class Survey extends Model
         'description'
     ];
 
+    /**
+     * A Survey is comprised of questions
+     */
     public function questions()
     {
-        return $this->hasMany('App\Questions');
+        return $this->hasMany('App\Question');
     }
 
+    /**
+     * Submissions are aggregated answers
+     */
     public function submissions()
     {
         return $this->hasMany('App\Submission');
     }
 
+    /**
+     * Mutate to show as diff for humans
+     */
     public function getCreatedAtAttribute($value)
     {
         return $this->attributes['created_at'] = Carbon::parse($value)->diffForHumans();
     }
-
 
 }
