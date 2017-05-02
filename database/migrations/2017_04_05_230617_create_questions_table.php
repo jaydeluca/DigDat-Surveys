@@ -19,7 +19,6 @@ class CreateQuestionsTable extends Migration
             $table->integer('survey_id')->unsigned();
             $table->foreign('survey_id')->references('id')->on('surveys');
             $table->text('question');
-            $table->longText('options');
         });
     }
 

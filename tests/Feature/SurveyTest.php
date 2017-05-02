@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use App\Option;
 
 class SurveyTest extends TestCase
 {
@@ -19,10 +20,6 @@ class SurveyTest extends TestCase
         $this->survey = factory('App\Survey')->create();
 
         $this->question = factory('App\Question')->create(['survey_id' => $this->survey->id]);
-
-        $this->question->options()->save([
-            'option' => 'Bengals'
-        ]);
 
     }
 
@@ -53,12 +50,20 @@ class SurveyTest extends TestCase
     /** @test */
     public function a_question_has_options()
     {
+        // add an option
+        $option = $this->question->options()->save(new Option([
+            'value' => 'Bengals'
+        ]));
 
+        $this->assertEquals($this->question->options()->count(), 1);
+        $this->assertEquals($this->question->options()->first()->value, $option->value);
 
+        // lets add another
+        $this->question->options()->save(new Option([
+            'value' => 'Pats'
+        ]));
 
-
-
+        $this->assertEquals($this->question->options()->count(), 2);
     }
-
 
 }

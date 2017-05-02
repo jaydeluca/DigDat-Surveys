@@ -11,7 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //disable foreign key check for this connection before running seeders
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         $this->call(UserSeeder::class);
-        $this->call(Survey1Seeder::class);
+        $this->call(SurveySeeder::class);
+
     }
 }
