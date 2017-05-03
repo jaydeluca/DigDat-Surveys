@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use App\Option;
 
-class SurveyTest extends TestCase
+class TakeSurveyTest extends TestCase
 {
 
     use DatabaseMigrations;

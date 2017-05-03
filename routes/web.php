@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     // Surveys
     Route::get('/results/{survey}', 'SurveyController@resultsPage');
 
+    Route::post('/surveys', 'SurveyController@store');
+
     Route::get('/home', 'HomeController@home');
 
 });

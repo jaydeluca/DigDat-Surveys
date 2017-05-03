@@ -31,7 +31,14 @@ class SurveyController extends Controller
             'survey' => $id,
         ]);
 
-        return view('pages.take-survey');
+        return view('pages.take-survey')->with(['survey' => $id]);
+    }
+
+    public function store(Request $request)
+    {
+        $survey = Survey::create($request->all());
+
+        return redirect('/surveys/'.$survey->id);
     }
 
     /**
