@@ -13,6 +13,16 @@ class Survey extends Model
     ];
 
     /**
+     * Get a string path for survey
+     *
+     * @return string
+     */
+    public function path()
+    {
+        return '/surveys/' . $this->id;
+    }
+
+    /**
      * A Survey is comprised of questions
      */
     public function questions()
