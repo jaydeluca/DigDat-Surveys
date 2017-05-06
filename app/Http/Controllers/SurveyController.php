@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Survey;
-use App\Submission;
-use App\Answer;
 use JavaScript;
 use Analytics;
 use Spatie\Analytics\Period;
@@ -15,6 +13,8 @@ class SurveyController extends Controller
 
     /**
      * Public facing welcome page with list of recent surveys
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -24,6 +24,8 @@ class SurveyController extends Controller
 
     /**
      * Show individual Survey
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(Survey $id)
     {
@@ -42,31 +44,9 @@ class SurveyController extends Controller
     }
 
     /**
-     * Survey Submission Processing (sent via ajax)
-     *
-     * @param Request $request
-     */
-    public function submit(Request $request)
-    {
-        $data = $request->all();
-
-        $submission = Submission::create([
-            'survey_id' => $data['id'],
-            'ip' => $request->ip()
-        ]);
-
-        foreach ($data['questions'] as $question) {
-
-            $submission->answers()->save(new Answer([
-                'question' => $question['question'],
-                'answer' => $question['answer'] ? $question['answer'] : 'n/a'
-            ]));
-
-        }
-    }
-
-    /**
      * Show the Results of a Survey
+     * - Most of this page is handled in Vue
+     * - See Results.vue
      *
      * @param Survey $survey
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -80,5 +60,17 @@ class SurveyController extends Controller
         ]);
 
         return view('results');
+    }
+
+    /**
+     * Form for creating a new form
+     * - Most of the heavy lifting is done in Vue
+     * - See CreateSurvey.vue
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function createSurveyPage()
+    {
+        return view('pages.create-survey');
     }
 }

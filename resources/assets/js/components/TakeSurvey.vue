@@ -39,7 +39,11 @@
 </template>
 
 <script>
+
   export default {
+
+    name: 'TakeSurvey',
+
     data() {
       return {
         submitted: false,

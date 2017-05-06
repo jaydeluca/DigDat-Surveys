@@ -46,8 +46,13 @@
         <div class="container">
             <div class="nav-left">
                 <a class="nav-item" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'DigDat Surveys') }}
                 </a>
+
+                <a class="nav-item is-tab" href="/surveys/create">
+                    Create Survey
+                </a>
+
             </div>
             <span class="nav-toggle">
                 <span></span>
@@ -60,8 +65,8 @@
                     <a class="nav-item is-tab" href="{{ route('login') }}">Login</a>
                     <a class="nav-item is-tab" href="{{ route('register') }}">Register</a>
                 @else
-                    <p class="dropdown-toggle nav-item is-tab">
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                    <p class="nav-item">
+                        {{ Auth::user()->name }}
                     </p>
 
                     <a href="{{ route('logout') }}" class="nav-item is-tab"

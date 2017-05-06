@@ -32,7 +32,7 @@ class SurveySeeder extends Seeder
                 'question' => $question->question,
             ]);
 
-             print_r(collect($question->options));
+             print_r(collect($question->options[0]));
 
 //             $question->options()->create([
 //                 'value' => $option
