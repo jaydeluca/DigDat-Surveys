@@ -842,21 +842,11 @@ __webpack_require__(31);
 
 Vue.component('survey', __webpack_require__(35));
 Vue.component('results', __webpack_require__(34));
+Vue.component('create-survey', __webpack_require__(45));
 
 var app = new Vue({
   el: '#app'
 });
-
-// The following code is based off a toggle menu by @Bradcomp
-// source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
-(function () {
-  var burger = document.querySelector('.nav-toggle');
-  var menu = document.querySelector('.nav-menu');
-  burger.addEventListener('click', function () {
-    burger.classList.toggle('is-active');
-    menu.classList.toggle('is-active');
-  });
-})();
 
 /***/ }),
 /* 10 */
@@ -29095,6 +29085,205 @@ module.exports = function(module) {
 __webpack_require__(9);
 module.exports = __webpack_require__(10);
 
+
+/***/ }),
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  name: 'CreateSurvey',
+
+  data: function data() {
+    return {
+      submitted: false,
+      survey: {
+        name: '',
+        description: '',
+        questions: []
+      },
+      question: {
+        question: '',
+        options: []
+      },
+      option: ''
+    };
+  },
+
+
+  methods: {
+    createSurvey: function createSurvey() {
+      var _this = this;
+
+      var data = this.survey;
+      axios.post('/api/survey/submit', data).then(function (res) {
+        _this.submitted = true;
+      });
+    },
+    saveQuestion: function saveQuestion() {
+      // validation
+      if (true) {
+        this.survey.questions.push(this.question);
+        this.question = {
+          question: '',
+          options: []
+        };
+      }
+    },
+    saveOption: function saveOption(question) {
+
+      // validation
+      if (true) {}
+    }
+  }
+
+});
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(7)(
+  /* script */
+  __webpack_require__(44),
+  /* template */
+  __webpack_require__(46),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/jaydeluca/code/JD/DigDatSurvey/resources/assets/js/components/CreateSurvey.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] CreateSurvey.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5070054e", Component.options)
+  } else {
+    hotAPI.reload("data-v-5070054e", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column is-8 is-offset-2"
+  }, [_c('div', {
+    staticClass: "box"
+  }, [_c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label"
+  }, [_vm._v("Name")]), _vm._v(" "), _c('p', {
+    staticClass: "control"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.survey.name),
+      expression: "survey.name"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "Ex. Patriots Fan Survey"
+    },
+    domProps: {
+      "value": (_vm.survey.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.survey.name = $event.target.value
+      }
+    }
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "field"
+  }, [_c('p', {
+    staticClass: "control"
+  }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.survey.description),
+      expression: "survey.description"
+    }],
+    staticClass: "textarea",
+    attrs: {
+      "placeholder": "Description (optional)"
+    },
+    domProps: {
+      "value": (_vm.survey.description)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.survey.description = $event.target.value
+      }
+    }
+  })])])])])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-5070054e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
