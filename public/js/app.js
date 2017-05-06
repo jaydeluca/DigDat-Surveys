@@ -1865,18 +1865,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -19252,13 +19240,13 @@ var Component = __webpack_require__(7)(
   /* script */
   __webpack_require__(29),
   /* template */
-  __webpack_require__(36),
+  __webpack_require__(37),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/jaydeluca/code/ECSurvey/resources/assets/js/components/Results.vue"
+Component.options.__file = "/Users/jaydeluca/code/JD/DigDatSurvey/resources/assets/js/components/Results.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Results.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -19269,9 +19257,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6981b9ba", Component.options)
+    hotAPI.createRecord("data-v-3f7adb3a", Component.options)
   } else {
-    hotAPI.reload("data-v-6981b9ba", Component.options)
+    hotAPI.reload("data-v-3f7adb3a", Component.options)
   }
 })()}
 
@@ -19286,13 +19274,13 @@ var Component = __webpack_require__(7)(
   /* script */
   __webpack_require__(30),
   /* template */
-  __webpack_require__(37),
+  __webpack_require__(36),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/jaydeluca/code/ECSurvey/resources/assets/js/components/TakeSurvey.vue"
+Component.options.__file = "/Users/jaydeluca/code/JD/DigDatSurvey/resources/assets/js/components/TakeSurvey.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TakeSurvey.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -19303,9 +19291,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-fb8c09a6", Component.options)
+    hotAPI.createRecord("data-v-14121438", Component.options)
   } else {
-    hotAPI.reload("data-v-fb8c09a6", Component.options)
+    hotAPI.reload("data-v-14121438", Component.options)
   }
 })()}
 
@@ -19314,6 +19302,71 @@ module.exports = Component.exports
 
 /***/ }),
 /* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container survey"
+  }, [(_vm.dataLoading) ? [_c('div', {
+    staticClass: "card-content"
+  }, [_vm._v("\n            Loading...\n        ")])] : [_c('div', {
+    staticClass: "section"
+  }, [_c('div', {
+    staticClass: "card"
+  }, [_c('div', {
+    staticClass: "card-content questions"
+  }, [(_vm.submitted) ? [_vm._v("\n                        Thanks!\n                    ")] : _vm._l((_vm.survey.questions), function(question) {
+    return _c('div', {
+      staticClass: "section question"
+    }, [_c('p', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('span', {
+      staticClass: "select"
+    }, [_c('select', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (question.answer),
+        expression: "question.answer"
+      }],
+      on: {
+        "change": function($event) {
+          var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+            return o.selected
+          }).map(function(o) {
+            var val = "_value" in o ? o._value : o.value;
+            return val
+          });
+          question.answer = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+        }
+      }
+    }, [_c('option', {
+      attrs: {
+        "value": ""
+      }
+    }, [_vm._v("Select An Answer")]), _vm._v(" "), _vm._l((question.options), function(option) {
+      return _c('option', [_vm._v(_vm._s(option))])
+    })], 2)])])
+  })], 2), _vm._v(" "), (!_vm.submitted) ? _c('div', {
+    staticClass: "card-footer"
+  }, [_c('button', {
+    staticClass: "button is-fullwidth is-primary",
+    attrs: {
+      "type": "button"
+    },
+    on: {
+      "click": _vm.submitSurvey
+    }
+  }, [_vm._v("Submit")])]) : _vm._e()])])]], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-14121438", module.exports)
+  }
+}
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19372,86 +19425,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6981b9ba", module.exports)
-  }
-}
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container survey"
-  }, [(_vm.dataLoading) ? [_c('div', {
-    staticClass: "card-content"
-  }, [_vm._v("\n            Loading...\n        ")])] : [_c('div', {
-    staticClass: "section product-header"
-  }, [_c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "columns"
-  }, [_c('div', {
-    staticClass: "column"
-  }, [_c('span', {
-    staticClass: "title is-3"
-  }, [_vm._v(_vm._s(_vm.survey.name))]), _vm._v(" "), _c('span', {
-    staticClass: "title is-3 has-text-muted"
-  }, [_vm._v(" | ")]), _vm._v(" "), _c('span', {
-    staticClass: "title is-4 has-text-muted"
-  }, [_vm._v("Created " + _vm._s(_vm.survey.created_at))])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "section"
-  }, [_c('div', {
-    staticClass: "card"
-  }, [_c('div', {
-    staticClass: "card-content questions"
-  }, [(_vm.submitted) ? [_vm._v("\n                        Thanks!\n                    ")] : _vm._l((_vm.survey.questions), function(question) {
-    return _c('div', {
-      staticClass: "section question"
-    }, [_c('p', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('span', {
-      staticClass: "select"
-    }, [_c('select', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (question.answer),
-        expression: "question.answer"
-      }],
-      on: {
-        "change": function($event) {
-          var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-            return o.selected
-          }).map(function(o) {
-            var val = "_value" in o ? o._value : o.value;
-            return val
-          });
-          question.answer = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-        }
-      }
-    }, [_c('option', {
-      attrs: {
-        "value": ""
-      }
-    }, [_vm._v("Select An Answer")]), _vm._v(" "), _vm._l((question.options), function(option) {
-      return _c('option', [_vm._v(_vm._s(option))])
-    })], 2)])])
-  })], 2), _vm._v(" "), _c('div', {
-    staticClass: "card-footer"
-  }, [_c('button', {
-    staticClass: "button is-fullwidth is-primary",
-    attrs: {
-      "type": "button"
-    },
-    on: {
-      "click": _vm.submitSurvey
-    }
-  }, [_vm._v("Submit")])])])])]], 2)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-fb8c09a6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-3f7adb3a", module.exports)
   }
 }
 

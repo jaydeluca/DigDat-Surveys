@@ -4,6 +4,11 @@ body {
 
 .boards {
   padding: 10px 0;
+  color: black;
+
+  .title {
+    color: black !important;
+  }
 
   ul {
     li {
