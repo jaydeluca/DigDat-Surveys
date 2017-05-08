@@ -7,6 +7,9 @@
 window.Vue = require('vue');
 window._ = require('lodash');
 
+// For communicating between components
+window.AppEvents = new Vue();
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

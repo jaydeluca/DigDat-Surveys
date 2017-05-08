@@ -23,7 +23,24 @@
                     </div>
                 </div>
 
+                <span class="title is-4">Questions:</span>
+                <div class="box has-text-dark" v-for="question in survey.questions">
+                    <strong>{{ question.question }}</strong>
+                    <hr>
+
+                    <ul>
+                        <li v-for="option in question.options">
+                            {{ option }}
+                        </li>
+                    </ul>
+                </div>
+
                 <!-- Question -->
+                <survey-question
+                        v-for="n in question_count"
+                        :data="n"
+                        :key="n">
+                </survey-question>
 
             </div>
         </div>
@@ -49,8 +66,13 @@
           question: '',
           options: []
         },
-        option: ''
+        option: '',
+        question_count: 1,
       }
+    },
+
+    mounted() {
+      AppEvents.$on('save-question', this.saveQuestion)
     },
 
     methods: {
@@ -62,29 +84,18 @@
         })
       },
 
-      saveQuestion() {
+      saveQuestion(question) {
         // validation
         if (true) {
-          this.survey.questions.push(this.question);
-          this.question = {
-            question: '',
-            options: []
-          }
+          console.log(question);
+          this.survey.questions.push(question);
         }
       },
 
-      saveOption(question) {
+    },
 
-        // validation
-        if (true) {
-
-
-
-
-        }
-
-      }
-
+    components: {
+      'survey-question': require('./CreateSurveyQuestion.vue')
     }
 
   }
