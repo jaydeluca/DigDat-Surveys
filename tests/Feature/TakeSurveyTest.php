@@ -17,7 +17,7 @@ class TakeSurveyTest extends TestCase
     {
         parent::setUp();
 
-        $this->survey = factory('App\Survey')->create();
+        $this->survey = create('App\Survey');
 
         $this->question = factory('App\Question')->create(['survey_id' => $this->survey->id]);
 
