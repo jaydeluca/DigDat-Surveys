@@ -15,7 +15,7 @@ class CreateSurveyTest extends TestCase
     public function an_authenticated_user_can_create_a_survey()
     {
         // given we have a signed in user
-        $this->actingAs(factory('App\User')->create());
+        $this->signIn();
 
         // endpoint is hit for a new survey, should redirect to see survey
         $survey = make('App\Survey');
@@ -27,7 +27,7 @@ class CreateSurveyTest extends TestCase
     public function an_authenticated_user_can_create_survey_with_form()
     {
         // given we have a signed in user
-        $this->actingAs(create('App\User'));
+        $this->signIn();
 
         // able to see the create survey page
         $this->get('/surveys/create')->assertSee('Create Survey');
@@ -38,6 +38,17 @@ class CreateSurveyTest extends TestCase
     {
         $this->get('/surveys/create')
             ->assertRedirect('/login');
+    }
+
+    /** @test */
+    public function a_guest_can_not_create_survey()
+    {
+
+
+        $survey = make('App\Survey');
+
+        $this->post('/surveys', $survey->toArray());
+        $this->expectException('Illuminate\Auth\AuthenticationException');
     }
 
 }
