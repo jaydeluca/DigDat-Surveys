@@ -43,10 +43,7 @@ class CreateSurveyTest extends TestCase
     /** @test */
     public function a_guest_can_not_create_survey()
     {
-
-
         $survey = make('App\Survey');
-
         $this->post('/surveys', $survey->toArray());
         $this->expectException('Illuminate\Auth\AuthenticationException');
     }

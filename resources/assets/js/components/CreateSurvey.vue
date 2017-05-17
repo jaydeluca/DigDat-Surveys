@@ -87,7 +87,6 @@
       saveQuestion(question) {
         // validation
         if (true) {
-          console.log(question);
           this.survey.questions.push(question);
         }
       },

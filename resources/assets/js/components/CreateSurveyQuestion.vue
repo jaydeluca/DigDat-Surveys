@@ -78,9 +78,13 @@
 
       saveQuestion() {
         AppEvents.$emit('save-question', this.question);
+        this.question = {
+          question: '',
+          options: []
+        }
       }
-    }
 
+    }
   }
 
 </script>
