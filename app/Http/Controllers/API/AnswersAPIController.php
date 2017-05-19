@@ -20,19 +20,15 @@ class AnswersAPIController extends Controller
     public function show(Survey $id)
     {
 
-        // questions
-        $questions = Question::where('survey_id', $id->id)->get()->map(function ($item) {
-            return collect($item)->only(['question', 'options']);
-        });
-
-        foreach($questions as $question) {
-            $question["options"] = collect(json_decode($question["options"]))->map(function ($item) use ($question) {
+        $questions = Survey::find($id->id)->questions()->get()->map(function ($item) {
+            $item["options"] = $item->options()->get()->map(function ($option) {
                 return [
-                    'option' => $item,
-                    'count' => Answer::where('question', $question['question'])->where('answer', $item)->count()
+                    'option' => $option["label"],
+                    'count' => $option->answers()->count()
                 ];
             });
-        }
+            return $item;
+        });
 
         return $questions;
     }

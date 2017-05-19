@@ -23,4 +23,14 @@ class Option extends Model
         return $this->belongsTo('App\Question');
     }
 
+    /**
+     * Submissions could have answers that are this option
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function answers()
+    {
+        return $this->hasMany('App\Answer');
+    }
+
 }
