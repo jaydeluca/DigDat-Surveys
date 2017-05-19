@@ -19608,7 +19608,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": ""
       }
     }, [_vm._v("Select An Answer")]), _vm._v(" "), _vm._l((question.options), function(option) {
-      return _c('option', [_vm._v(_vm._s(option.label))])
+      return _c('option', {
+        domProps: {
+          "value": option.id
+        }
+      }, [_vm._v(_vm._s(option.label))])
     })], 2)])])
   })], 2), _vm._v(" "), (!_vm.submitted) ? _c('div', {
     staticClass: "card-footer"

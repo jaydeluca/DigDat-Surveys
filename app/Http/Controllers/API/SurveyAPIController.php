@@ -38,7 +38,8 @@ class SurveyAPIController extends Controller
         foreach ($data['questions'] as $question) {
 
             $submission->answers()->save(new Answer([
-                'question' => $question['question'],
+                'question_id' => $question['id'],
+                'option_id' => $question["answer"]
             ]));
 
         }

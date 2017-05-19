@@ -22,7 +22,7 @@
                                 <span class="select">
                                     <select v-model="question.answer">
                                         <option value="">Select An Answer</option>
-                                        <option v-for="option in question.options">{{ option.label }}</option>
+                                        <option v-for="option in question.options" :value="option.id">{{ option.label }}</option>
                                     </select>
                                 </span>
                             </div>
