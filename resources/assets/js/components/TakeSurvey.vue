@@ -22,7 +22,7 @@
                                 <span class="select">
                                     <select v-model="question.answer">
                                         <option value="">Select An Answer</option>
-                                        <option v-for="option in question.options">{{ option }}</option>
+                                        <option v-for="option in question.options">{{ option.label }}</option>
                                     </select>
                                 </span>
                             </div>
@@ -66,7 +66,6 @@
             let data = res.data;
 
             data.questions.forEach(question => {
-              question.options = JSON.parse(question.options);
               question.answer = '';
             });
             this.survey = data;

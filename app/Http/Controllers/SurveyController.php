@@ -71,6 +71,10 @@ class SurveyController extends Controller
      */
     public function createSurveyPage()
     {
+        JavaScript::put([
+            'user_id' => Auth()->user()->id
+        ]);
+
         return view('pages.create-survey');
     }
 }

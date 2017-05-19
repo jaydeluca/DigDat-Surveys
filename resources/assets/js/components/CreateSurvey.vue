@@ -42,6 +42,8 @@
                         :key="n">
                 </survey-question>
 
+                <button class="button is-primary" @click="createSurvey">Submit</button>
+
             </div>
         </div>
 
@@ -78,9 +80,13 @@
     methods: {
 
       createSurvey() {
-        let data = this.survey;
-        axios.post('/api/survey/submit', data).then(res => {
+        let data = {
+          survey: this.survey,
+          user_id: window.user_id
+        };
+        axios.post('/api/survey/create', data).then(res => {
           this.submitted = true;
+          console.log(res.data)
         })
       },
 

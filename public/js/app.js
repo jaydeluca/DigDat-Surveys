@@ -1751,6 +1751,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1782,9 +1784,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     createSurvey: function createSurvey() {
       var _this = this;
 
-      var data = this.survey;
-      axios.post('/api/survey/submit', data).then(function (res) {
+      var data = {
+        survey: this.survey,
+        user_id: window.user_id
+      };
+      axios.post('/api/survey/create', data).then(function (res) {
         _this.submitted = true;
+        console.log(res.data);
       });
     },
     saveQuestion: function saveQuestion(question) {
@@ -2079,7 +2085,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var data = res.data;
 
         data.questions.forEach(function (question) {
-          question.options = JSON.parse(question.options);
           question.answer = '';
         });
         _this.survey = data;
@@ -19603,7 +19608,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": ""
       }
     }, [_vm._v("Select An Answer")]), _vm._v(" "), _vm._l((question.options), function(option) {
-      return _c('option', [_vm._v(_vm._s(option))])
+      return _c('option', [_vm._v(_vm._s(option.label))])
     })], 2)])])
   })], 2), _vm._v(" "), (!_vm.submitted) ? _c('div', {
     staticClass: "card-footer"
@@ -19858,7 +19863,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "data": n
       }
     })
-  })], 2)])])
+  }), _vm._v(" "), _c('button', {
+    staticClass: "button is-primary",
+    on: {
+      "click": _vm.createSurvey
+    }
+  }, [_vm._v("Submit")])], 2)])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

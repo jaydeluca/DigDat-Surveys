@@ -5,6 +5,10 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Survey;
+use App\Question;
+use App\Option;
+use App\Submission;
+use App\Answer;
 
 class SurveyAPIController extends Controller
 {
@@ -14,7 +18,7 @@ class SurveyAPIController extends Controller
      */
     public function show(Survey $id)
     {
-        return Survey::with('questions')->find($id);
+        return Survey::with('questions', 'questions.options')->find($id);
     }
 
     /**
@@ -35,10 +39,37 @@ class SurveyAPIController extends Controller
 
             $submission->answers()->save(new Answer([
                 'question' => $question['question'],
-                'answer' => $question['answer'] ? $question['answer'] : 'n/a'
             ]));
 
         }
+    }
+
+    public function create(Request $request)
+    {
+
+        $survey = $request->input('survey');
+
+        $newSurvey = Survey::create([
+            'user_id' => $request->input('user_id'),
+            'name'  => $survey["name"],
+            'description' => $survey["description"]
+        ]);
+
+        foreach ($survey["questions"] as $question) {
+
+            $newQuestion = $newSurvey->questions()->save(new Question([
+                'question' => $question["question"]
+            ]));
+
+            foreach ($question["options"] as $option) {
+                $newQuestion->options()->save(new Option([
+                    'label' => $option,
+                    'value' => $option
+                ]));
+            }
+
+        }
+
     }
 
 }
