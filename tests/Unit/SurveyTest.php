@@ -31,4 +31,10 @@ class SurveyTest extends TestCase
     {
         $this->assertEquals($this->question->question, $this->survey->questions->first()->question);
     }
+
+    /** @test */
+    public function a_survey_has_a_string_path()
+    {
+        $this->assertEquals("/surveys/{$this->user->slug}/{$this->survey->id}", $this->survey->path());
+    }
 }

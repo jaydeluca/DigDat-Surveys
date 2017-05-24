@@ -23,8 +23,8 @@ class SurveyController extends Controller
     }
 
     /**
-     * Show individual Survey
-     *
+     * @param $user_slug
+     * @param Survey $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($user_slug, Survey $id)

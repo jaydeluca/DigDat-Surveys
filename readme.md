@@ -18,6 +18,7 @@ Note: This file is not, and should not be version controlled, so you **will need
 ## TODO FOR V0.1
 - ~~Associate Surveys with users~~
 - ~~Create an 'Option' Model for question options (adds more flexibility)~~
+- User Registration - slug validation
 - Add Survey status - maybe optional expiration date?
 - Survey GUI/CRUD for creating surveys (in progress)
 - Survey URLS (slugs & user namespace?)
