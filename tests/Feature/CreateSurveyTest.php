@@ -20,7 +20,7 @@ class CreateSurveyTest extends TestCase
         // endpoint is hit for a new survey, should redirect to see survey
         $survey = make('App\Survey');
         $this->post('/surveys', $survey->toArray())
-            ->assertSee($survey->name);
+            ->assertRedirect('/surveys/1');
     }
 
     /** @test */
@@ -34,18 +34,15 @@ class CreateSurveyTest extends TestCase
     }
 
     /** @test */
-    public function an_unauthenticated_user_can_not_create_survey_with_form()
+    public function an_unauthenticated_user_can_not_create_survey()
     {
-        $this->get('/surveys/create')
+        $this->withExceptionHandling()
+            ->get('/surveys/create')
             ->assertRedirect('/login');
-    }
 
-    /** @test */
-    public function a_guest_can_not_create_survey()
-    {
-        $survey = make('App\Survey');
-        $this->post('/surveys', $survey->toArray());
-        $this->expectException('Illuminate\Auth\AuthenticationException');
+        $this->withExceptionHandling()
+            ->post('/surveys')
+            ->assertRedirect('/login');
     }
 
 }

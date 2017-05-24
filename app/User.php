@@ -27,6 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Surveys the user created / owns
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function surveys()
     {
         return $this->hasMany('App\Survey');

@@ -24,7 +24,19 @@ class Survey extends Model
     }
 
     /**
+     * User who created / owns this survey
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    /**
      * A Survey is comprised of questions
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function questions()
     {
@@ -33,6 +45,8 @@ class Survey extends Model
 
     /**
      * Submissions are aggregated answers
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function submissions()
     {
@@ -41,6 +55,9 @@ class Survey extends Model
 
     /**
      * Mutate to show as diff for humans
+     *
+     * @param $value
+     * @return string
      */
     public function getCreatedAtAttribute($value)
     {
