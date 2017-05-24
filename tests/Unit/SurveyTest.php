@@ -9,20 +9,26 @@ class SurveyTestTest extends TestCase
 {
     use DatabaseMigrations;
 
+    protected $user, $survey, $question;
+
     public function setUp()
     {
         parent::setUp();
         $this->user = factory('App\User')->create();
-        $this->survey = factory('App\Survey')->create();
+        $this->survey = $this->user->surveys()->save(factory('App\Survey')->create());
         $this->question = factory('App\Question')->create(['survey_id' => $this->survey->id]);
     }
 
     /** @test */
     public function a_survey_has_a_user()
     {
-        $user = factory('App\User')->create();
-        $survey = $user->surveys()->save(factory('App\Survey')->create());
-        $this->assertEquals($user->surveys()->first()->name, $survey->name);
-        $this->assertEquals($user->id, $survey->user->id);
+        $this->assertEquals($this->user->surveys()->first()->name, $this->survey->name);
+        $this->assertEquals($this->user->id, $this->survey->user->id);
+    }
+
+    /** @test */
+    public function a_survey_has_questions()
+    {
+        $this->assertEquals($this->question->question, $this->survey->questions->first()->question);
     }
 }

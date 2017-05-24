@@ -37,5 +37,15 @@ $factory->define(App\Question::class, function (Faker\Generator $faker) {
     return [
         'question' => $faker->sentence . "?"
     ];
+});
 
+$factory->define(App\Option::class, function (Faker\Generator $faker) {
+    $option = $faker->streetName;
+    return [
+        'question_id' => function () {
+            return factory('App\Question')->create()->id;
+        },
+        'label' => $option,
+        'value' => $option
+    ];
 });
