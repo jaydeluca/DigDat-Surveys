@@ -27,6 +27,19 @@
                                     </p>
                                 </div>
 
+                                <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
+                                    <label class="label">URL Slug</label>
+                                    <p class="control">
+                                        <input id="slug" type="text" class="input" name="slug" value="{{ old('slug') }}" required autofocus>
+
+                                        @if ($errors->has('slug'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('slug') }}</strong>
+                                            </span>
+                                        @endif
+                                    </p>
+                                </div>
+
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label class="label">E-Mail Address</label>
 

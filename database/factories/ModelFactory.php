@@ -23,7 +23,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-
 $factory->define(App\Survey::class, function (Faker\Generator $faker) {
     return [
         'user_id' => function () {
@@ -40,7 +39,7 @@ $factory->define(App\Question::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Option::class, function (Faker\Generator $faker) {
-    $option = $faker->streetName;
+    $option = $faker->word;
     return [
         'question_id' => function () {
             return factory('App\Question')->create()->id;

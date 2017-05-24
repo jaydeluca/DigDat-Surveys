@@ -6,6 +6,8 @@
 - `php artisan db:seed`
 
 #### Google Analytics
+***Deprecated...* alas, doesn't seem important for the time being**
+
 Reference the configuration docs from here: https://github.com/spatie/laravel-analytics
 
 You will need to do a few steps through your google API dashboard, and then using a JSON file they provide,
@@ -13,32 +15,17 @@ add it to the project at: storage/app/laravel-google-analytics/service-account-c
 
 Note: This file is not, and should not be version controlled, so you **will need** to manually add it.
 
-### Creating a form
-Currently just using JSON until the GUI is done.
-
-Ex:
-```
-  {
-    "question": "There is no spoon?",
-    "options": [
-      "Yes",
-      "No"
-    ]
-  }
-```
-
-## TODO
-- Associate Surveys with users (in progress)
-- Create an 'Option' Model for question options (adds more flexibility)
+## TODO FOR V0.1
+- ~~Associate Surveys with users~~
+- ~~Create an 'Option' Model for question options (adds more flexibility)~~
 - Add Survey status - maybe optional expiration date?
-- Survey GUI/CRUD for creating surveys
-- Survey URLS
-- Integrate Google Analytics more specific (stats per survey as opposed to per account)
+- Survey GUI/CRUD for creating surveys (in progress)
+- Survey URLS (slugs & user namespace?)
+- Remove Google Analytics stuff
 - Email Reporting
 - Layout overhaul: get some love from Eric
 - Survey Page Titles
 - Public / Private?
-- Make Google Analytics aspect optional and more customizable within the application
 - Users can 'subscribe' to surveys. When survey is completed, they can get an email with results
 
 ## Pages
