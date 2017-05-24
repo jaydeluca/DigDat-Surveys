@@ -20,7 +20,7 @@ class Survey extends Model
      */
     public function path()
     {
-        return '/surveys/' . $this->id;
+        return '/surveys/' . $this->user->slug . '/' . $this->id;
     }
 
     /**

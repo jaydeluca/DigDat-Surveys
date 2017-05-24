@@ -22,7 +22,7 @@
                             @foreach ($surveys as $survey)
                                 <tr>
                                     <td>
-                                        <a href="/surveys/{{ $survey->id }}">
+                                        <a href="{{ $survey->path() }}">
                                             {{ $survey->name }}
                                         </a>
                                     </td>

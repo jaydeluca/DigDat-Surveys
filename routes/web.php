@@ -32,5 +32,5 @@ Route::get('/surveys', 'SurveyController@index');
 
 Auth::routes();
 
-Route::get('/surveys/{id}', 'SurveyController@show');
+Route::get('/surveys/{user_slug}/{id}', 'SurveyController@show');
 

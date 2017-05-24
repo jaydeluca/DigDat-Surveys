@@ -16,6 +16,8 @@ class QuestionTest extends TestCase
 
     use DatabaseMigrations;
 
+    protected $survey, $question;
+
     public function setUp()
     {
         parent::setUp();

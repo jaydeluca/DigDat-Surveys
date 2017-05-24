@@ -13,6 +13,8 @@ class TakeSurveyTest extends TestCase
 
     use DatabaseMigrations;
 
+    protected $survey, $question;
+
     public function setUp()
     {
         parent::setUp();
@@ -33,7 +35,7 @@ class TakeSurveyTest extends TestCase
     /** @test */
     public function a_user_can_browse_a_single_survey()
     {
-        $this->get('/surveys/' . $this->survey->id)
+        $this->get($this->survey->path())
             ->assertSee($this->survey->name);
     }
 

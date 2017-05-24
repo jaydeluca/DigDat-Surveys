@@ -27,7 +27,7 @@ class SurveyController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Survey $id)
+    public function show($user_slug, Survey $id)
     {
         JavaScript::put([
             'survey' => $id,
