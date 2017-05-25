@@ -1,6 +1,10 @@
   .nav {
     background: $color-background;
     height: 6.25rem;
+
+    .nav-right {
+      align-items: center;
+    }
   }
 
   a.logo {
@@ -16,3 +20,16 @@
     border-bottom-color: $color-accent;
     border-top-color: transparent;
   }
+
+  a.nav-item.is-tab {
+    margin: 0 10px;
+    padding: 20px 3px;
+    //border-bottom-color: #b2a373;
+    //border-top-color: #b2a373;
+  }
+
+  a.nav-item.is-tab:hover {
+    border-bottom-color: #a01c27;
+    border-top-color: #a01c27;
+  }
+
