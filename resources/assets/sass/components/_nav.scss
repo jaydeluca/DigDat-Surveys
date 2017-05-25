@@ -1,0 +1,18 @@
+  .nav {
+    background: $color-background;
+    height: 6.25rem;
+  }
+
+  a.logo {
+    color: white;
+    font-size: 20px;
+  }
+
+  .nav-item a:hover, a.nav-item:hover {
+    color: $color-accent;
+  }
+
+  .nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
+    border-bottom-color: $color-accent;
+    border-top-color: transparent;
+  }

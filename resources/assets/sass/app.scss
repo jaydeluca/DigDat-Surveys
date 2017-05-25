@@ -3,11 +3,18 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
-// Variables
-@import "variables";
 
 // Bulma
-@import "node_modules/bulma/bulma.sass";
+
+@import "node_modules/bulma/sass/utilities/all";
+
+// Variables
+@import "variables";
+@import "node_modules/bulma/sass/base/all";
+@import "node_modules/bulma/sass/components/all";
+@import "node_modules/bulma/sass/elements/all";
+@import "node_modules/bulma/sass/grid/all";
+@import "node_modules/bulma/sass/layout/all";
 
 * {
   font-family: "Raleway";
@@ -18,6 +25,8 @@
 @import "./components/forms";
 @import "./components/surveys";
 @import "./components/utilities";
+@import "./components/links";
+@import "./components/nav";
 
 // Overwrites
 @import "overwrites";

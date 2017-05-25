@@ -47,13 +47,13 @@
     <nav class="nav has-shadow" id="top">
         <div class="container">
             <div class="nav-left">
-                <a class="nav-item" href="{{ url('/') }}">
-                    {{ config('app.name', 'DigDat Surveys') }}
+                <a class="nav-item logo" href="{{ url('/') }}">
+                    DigDat
                 </a>
 
-                <a class="nav-item is-tab" href="/surveys/create">
-                    Create Survey
-                </a>
+                {{--<a class="nav-item is-tab" href="/surveys/create">--}}
+                    {{--Create Survey--}}
+                {{--</a>--}}
 
             </div>
             <span class="nav-toggle">
