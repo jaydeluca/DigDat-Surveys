@@ -47,13 +47,11 @@
     <nav class="nav has-shadow" id="top">
         <div class="container">
             <div class="nav-left">
-                <a class="nav-item logo" href="{{ url('/') }}">
-                    DigDat
-                </a>
 
-                {{--<a class="nav-item is-tab" href="/surveys/create">--}}
-                    {{--Create Survey--}}
-                {{--</a>--}}
+                <!-- Logo -->
+                <a class="nav-item logo" href="{{ url('/') }}">
+                    @icon('digdat-text-logo', 'header-logo')
+                </a>
 
             </div>
             <label for="menu-toggle" class="nav-toggle">

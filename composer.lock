@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "512fc872956fe26d66c732e4e8daf7d0",
-    "content-hash": "ef1b325d730626698ac4a7faf0be38a2",
+    "hash": "10a716ced0fe895f49fdc59f61f8eb29",
+    "content-hash": "74b1ef19e0ccf1789f1bf796ed1b1349",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -926,6 +926,49 @@
                 "php"
             ],
             "time": "2017-03-05 18:23:57"
+        },
+        {
+            "name": "nothingworks/blade-svg",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/blade-svg.git",
+                "reference": "3ec8f970a4145350bd99cb021b1ea8a1833647ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/3ec8f970a4145350bd99cb021b1ea8a1833647ce",
+                "reference": "3ec8f970a4145350bd99cb021b1ea8a1833647ce",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^5.3",
+                "illuminate/support": "^5.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BladeSvg\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "time": "2017-04-29 15:27:41"
         },
         {
             "name": "paragonie/random_compat",
@@ -2268,12 +2311,12 @@
             "version": "0.9.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },

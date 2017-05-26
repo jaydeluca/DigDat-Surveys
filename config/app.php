@@ -170,6 +170,7 @@ return [
         'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
         Spatie\Analytics\AnalyticsServiceProvider::class,
         Laravel\Dusk\DuskServiceProvider::class,
+        BladeSvg\BladeSvgServiceProvider::class,
 
         /*
          * Application Service Providers...

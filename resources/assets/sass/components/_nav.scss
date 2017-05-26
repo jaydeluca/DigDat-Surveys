@@ -17,6 +17,12 @@
     font-weight: 900;
   }
 
+  .header-logo {
+    fill: white;
+    width: 110px;
+    height: auto;
+  }
+
   .nav-item a:hover, a.nav-item:hover {
     color: $color-accent;
   }
