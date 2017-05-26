@@ -1,0 +1,16 @@
+.footer {
+
+  border-top: 20px solid $color-accent;
+  padding: 40px 100px;
+  background: $color-background;
+  color: white;
+
+  .content {
+    color: white;
+  }
+
+  strong {
+    color: white;
+  }
+
+}

@@ -58,15 +58,18 @@
   justify-content:space-around;
 
   @media (max-width: 600px) {
-
     padding: 25px;
-
     flex-direction: column;
-
     a {
       margin: 10px;
     }
-
   }
+}
+
+.cta-2 {
+  display: flex;
+  padding: 100px;
+  justify-content: space-around;
+  background: $color-alternate;
 
 }

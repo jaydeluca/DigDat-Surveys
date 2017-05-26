@@ -21,6 +21,12 @@
 
     </section>
 
+    <section class="cta-2">
+
+        PLACEHOLDER
+
+    </section>
+
     {{--<section class="hero is-dark is-bold">--}}
         {{--<div class="hero-body">--}}
             {{--<div class="container">--}}

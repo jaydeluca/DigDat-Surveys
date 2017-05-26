@@ -91,6 +91,16 @@
     @yield('content')
 </div>
 
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                <strong>DigDat Surveys</strong> a Free Survey Tool
+            </p>
+        </div>
+    </div>
+</footer>
+
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
