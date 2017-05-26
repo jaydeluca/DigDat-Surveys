@@ -20,3 +20,5 @@ Vue.component('create-survey', require('./components/CreateSurvey.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+

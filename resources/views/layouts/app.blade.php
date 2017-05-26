@@ -56,18 +56,21 @@
                 {{--</a>--}}
 
             </div>
-            <span class="nav-toggle">
+            <label for="menu-toggle" class="nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </span>
+            </label>
+            <input type="checkbox" id="menu-toggle" class="is-hidden"/>
+
             <div class="nav-right nav-menu">
 
                 @if (Auth::guest())
                     <a class="nav-item is-tab" href="/surveys">Browse Surveys</a>
                     <a class="nav-item is-tab" href="{{ route('login') }}">Login</a>
                     <a class="nav-item is-tab" href="{{ route('register') }}">Register</a>
-                    <a class="button c-btn c-btn--primary">Create a Survey</a>
+                    <a class="nav-item is-tab is-hidden-tablet" href="/surveys/create">Create a Survey</a>
+                    <a class="button c-btn c-btn--primary is-hidden-custom" href="/surveys/create">Create a Survey</a>
                 @else
                     <p class="nav-item">
                         {{ Auth::user()->name }}

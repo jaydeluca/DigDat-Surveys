@@ -5,11 +5,16 @@
     .nav-right {
       align-items: center;
     }
+
+    .container {
+      align-items: center;
+    }
   }
 
   a.logo {
     color: white;
-    font-size: 20px;
+    font-size: 26px;
+    font-weight: 900;
   }
 
   .nav-item a:hover, a.nav-item:hover {
@@ -33,3 +38,26 @@
     border-top-color: #a01c27;
   }
 
+  .nav-toggle span {
+    background-color: white;
+  }
+
+  .nav-toggle:hover {
+    background-color: transparent;
+    span {
+      background-color: $color-accent;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    #menu-toggle:checked + .nav-menu {
+      display: block;
+    }
+  }
+
+  .is-hidden-custom {
+    @media (max-width: 769px) {
+      display: none;
+    }
+  }
