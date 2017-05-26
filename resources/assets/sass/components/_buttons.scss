@@ -1,6 +1,13 @@
 
 .c-btn {
 
+  &:hover {
+    color: white;
+    -webkit-box-shadow: 6px 6px 16px -5px rgba(0,0,0,0.63);
+    -moz-box-shadow: 6px 6px 16px -5px rgba(0,0,0,0.63);
+    box-shadow: 6px 6px 16px -5px rgba(0,0,0,0.63);
+  }
+
 
 
   &--primary {
@@ -9,6 +16,10 @@
     color: white;
     font-weight: 700;
     text-transform: uppercase;
+  }
+
+  &--lg {
+    padding: 22px 40px;
   }
 
 }

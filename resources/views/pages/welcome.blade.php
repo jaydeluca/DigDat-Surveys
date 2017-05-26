@@ -2,18 +2,23 @@
 
 @section('content')
 
-    <section>
-        <div class="home">
-            <div class="bg">
-                <div class="cta">
-                    <h1>Create. Collect. Customize.</h1>
-                    <p>DigDat provides the ability to create surveys, customize the data you collect, and export your
-                        results for presentations or fun.<br><br>
-                        And it's free.
-                    </p>
-                </div>
+    <section class="home">
+        <div class="bg">
+            <div class="copy">
+                <h1>Create. Collect. Customize.</h1>
+                <p>DigDat provides the ability to create surveys, customize the data you collect, and export your
+                    results for presentations or fun.<br><br>
+                    And it's free.
+                </p>
             </div>
         </div>
+    </section>
+
+    <section class="cta">
+
+        <a href="/surveys/create" class="button c-btn c-btn--primary c-btn--lg">Create a Survey</a>
+        <a href="/surveys" class="button c-btn c-btn--primary c-btn--lg">Browse Surveys</a>
+
     </section>
 
     {{--<section class="hero is-dark is-bold">--}}

@@ -25,7 +25,7 @@
 
   }
 
-  .cta {
+  .copy {
     color: white;
 
     padding: 133px 0 0 70px;
@@ -50,5 +50,23 @@
     }
   }
 
+}
+
+.cta {
+  display: flex;
+  padding: 50px;
+  justify-content:space-around;
+
+  @media (max-width: 600px) {
+
+    padding: 25px;
+
+    flex-direction: column;
+
+    a {
+      margin: 10px;
+    }
+
+  }
 
 }
