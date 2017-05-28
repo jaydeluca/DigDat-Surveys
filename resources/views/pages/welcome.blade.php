@@ -23,7 +23,8 @@
 
     <section class="cta-2">
 
-        PLACEHOLDER
+        DigDat Surveys is an open source survey platform project. It is currently under construction and only semi-functional at the moment.
+
 
     </section>
 
