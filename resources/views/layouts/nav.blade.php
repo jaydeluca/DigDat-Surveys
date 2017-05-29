@@ -33,9 +33,9 @@
                     <div class="dropdown box">
                         <ul>
                             <li>
-                                <p>
+                                <a href="/home" class="nav-item">
                                     {{ Auth::user()->name }}
-                                </p>
+                                </a>
                             </li>
                             <li>
                                 <a href="{{ route('logout') }}" class="nav-item"
