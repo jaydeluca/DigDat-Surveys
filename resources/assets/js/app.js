@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -18,7 +17,27 @@ Vue.component('results', require('./components/Results.vue'));
 Vue.component('create-survey', require('./components/CreateSurvey.vue'));
 
 const app = new Vue({
-    el: '#app'
+  el: '#app'
 });
+
+// Function for the navigation dropdown
+function closeDropdownsIfAnyClick(ev) {
+  'use strict';
+
+  let tgt = ev.target || ev.srcElement;
+
+  // close all (but allow open just clicked)
+  document.querySelectorAll('.has-dropdown input[type="checkbox"]').forEach(
+    function (chb) {
+      if (chb.id !== tgt.id && chb.id !== tgt.getAttribute('for')) {
+        chb.checked = false
+      }
+    }
+  );
+
+  return true;
+}
+
+document.querySelector('body').addEventListener('click', closeDropdownsIfAnyClick)
 
 

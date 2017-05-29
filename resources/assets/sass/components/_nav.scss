@@ -1,69 +1,115 @@
-  .nav {
-    background: $color-background;
-    height: 6.25rem;
+.nav {
+  background: $color-background;
+  height: 6.25rem;
 
-    .nav-right {
-      align-items: center;
+  .nav-right {
+    align-items: center;
+  }
+
+  .container {
+    align-items: center;
+  }
+}
+
+a.logo {
+  color: white;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.header-logo {
+  fill: white;
+  width: 110px;
+  height: auto;
+}
+
+.nav-item a:hover, a.nav-item:hover {
+  color: $color-accent;
+}
+
+.nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
+  border-bottom-color: $color-accent;
+  border-top-color: transparent;
+}
+
+a.nav-item.is-tab {
+  margin: 0 10px;
+  padding: 20px 3px;
+  //border-bottom-color: #b2a373;
+  //border-top-color: #b2a373;
+}
+
+a.nav-item.is-tab:hover {
+  //border-bottom-color: #a01c27;
+  //border-top-color: #a01c27;
+}
+
+.nav-toggle span {
+  background-color: white;
+}
+
+.nav-toggle:hover {
+  background-color: transparent;
+  span {
+    background-color: $color-accent;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #menu-toggle:checked + .nav-menu {
+    display: block;
+  }
+}
+
+.is-hidden-custom {
+  @media (max-width: 769px) {
+    display: none;
+  }
+}
+
+.my-account {
+  margin-left: 10px;
+}
+
+/* Dropdown stuff */
+/* wrapper */
+.has-dropdown input[type="checkbox"] {
+  display: none;
+}
+
+.has-dropdown {
+  .box {
+    padding: 5px;
+    border-radius: 0;
+  }
+}
+
+.has-dropdown input[type="checkbox"]:checked ~ .dropdown {
+  display: block;
+}
+
+/* dropdown basic */
+.dropdown {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+
+  p {
+    padding: 7px 40px;
+  }
+
+  .nav-item {
+    padding: 7px 40px;
+
+    &:hover {
+      background: #dadada;
     }
 
-    .container {
-      align-items: center;
-    }
   }
+}
 
-  a.logo {
-    color: white;
-    font-size: 26px;
-    font-weight: 900;
-  }
-
-  .header-logo {
-    fill: white;
-    width: 110px;
-    height: auto;
-  }
-
-  .nav-item a:hover, a.nav-item:hover {
-    color: $color-accent;
-  }
-
-  .nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
-    border-bottom-color: $color-accent;
-    border-top-color: transparent;
-  }
-
-  a.nav-item.is-tab {
-    margin: 0 10px;
-    padding: 20px 3px;
-    //border-bottom-color: #b2a373;
-    //border-top-color: #b2a373;
-  }
-
-  a.nav-item.is-tab:hover {
-    //border-bottom-color: #a01c27;
-    //border-top-color: #a01c27;
-  }
-
-  .nav-toggle span {
-    background-color: white;
-  }
-
-  .nav-toggle:hover {
-    background-color: transparent;
-    span {
-      background-color: $color-accent;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    #menu-toggle:checked + .nav-menu {
-      display: block;
-    }
-  }
-
-  .is-hidden-custom {
-    @media (max-width: 769px) {
-      display: none;
-    }
-  }
+/* dropdown optional styling */
+.dropdown li:hover {
+  cursor: pointer;
+}

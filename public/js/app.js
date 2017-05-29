@@ -825,7 +825,6 @@ module.exports = g;
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -847,6 +846,24 @@ Vue.component('create-survey', __webpack_require__(36));
 var app = new Vue({
   el: '#app'
 });
+
+// Function for the navigation dropdown
+function closeDropdownsIfAnyClick(ev) {
+  'use strict';
+
+  var tgt = ev.target || ev.srcElement;
+
+  // close all (but allow open just clicked)
+  document.querySelectorAll('.has-dropdown input[type="checkbox"]').forEach(function (chb) {
+    if (chb.id !== tgt.id && chb.id !== tgt.getAttribute('for')) {
+      chb.checked = false;
+    }
+  });
+
+  return true;
+}
+
+document.querySelector('body').addEventListener('click', closeDropdownsIfAnyClick);
 
 /***/ }),
 /* 10 */
