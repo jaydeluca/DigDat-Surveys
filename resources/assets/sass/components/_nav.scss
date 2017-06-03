@@ -28,8 +28,7 @@ a.logo {
 }
 
 .nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
-  border-bottom-color: $color-accent;
-  border-top-color: transparent;
+  border-color: transparent;
 }
 
 a.nav-item.is-tab {
@@ -69,6 +68,7 @@ a.nav-item.is-tab:hover {
 
 .my-account {
   margin-left: 10px;
+  //margin-right: 10px;
 }
 
 /* Dropdown stuff */

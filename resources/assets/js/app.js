@@ -38,6 +38,6 @@ function closeDropdownsIfAnyClick(ev) {
   return true;
 }
 
-document.querySelector('body').addEventListener('click', closeDropdownsIfAnyClick)
+document.querySelector('body').addEventListener('click', closeDropdownsIfAnyClick);
 
 

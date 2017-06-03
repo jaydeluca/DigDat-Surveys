@@ -5,7 +5,7 @@
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-vcentered">
-                    <div class="column is-4 is-offset-4">
+                    <div class="column is-5 is-offset-1">
                         <h1 class="title">
                             Login
                         </h1>
@@ -51,6 +51,17 @@
                             </form>
                         </div>
                     </div>
+
+                    <div class="column is-5">
+                        <div class="card">
+                            <div class="card-content">
+                                <h1 class="title">Need an Account?</h1>
+                                <a href="/register" class="button is-fullwidth is-primary">Register for free</a>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

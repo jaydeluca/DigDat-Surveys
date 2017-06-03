@@ -19,15 +19,14 @@
 
             <!-- Guest Nav -->
             @if (Auth::guest())
-                <a class="nav-item is-tab" href="/surveys">Browse Surveys</a>
                 <a class="nav-item is-tab" href="{{ route('login') }}">Login</a>
-                <a class="nav-item is-tab" href="{{ route('register') }}">Register</a>
+                <a class="nav-item is-tab" href="/surveys">Browse Surveys</a>
                 <a class="nav-item is-tab is-hidden-tablet" href="/surveys/create">Create a Survey</a>
                 <a class="button c-btn c-btn--primary is-hidden-custom" href="/surveys/create">Create a Survey</a>
             @else
                 <a class="button c-btn c-btn--primary is-hidden-custom" href="/surveys/create">Create a Survey</a>
 
-                <div class="has-dropdown my-account is-hidden-custom">
+                <div class="has-dropdown my-account">
                     <input type="checkbox" id="ch1">   <!-- note: id -->
                     <label class="button" for="ch1">My Account</label>  <!-- note: for -->
                     <div class="dropdown box">
