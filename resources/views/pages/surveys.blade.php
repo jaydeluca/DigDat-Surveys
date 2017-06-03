@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <section class="hero is-fullheight is-dark is-bold">
+    <section class="hero">
         <div class="hero-body">
             <div class="container">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header background-accent">
                         <p class="card-header-title">Surveys</p>
                     </div>
                     <div class="card-content">
