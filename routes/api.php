@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group([
+    'auth' => 'api',
     'namespace' => 'API',
 ], function () {
     Route::post('survey/submit', 'SurveyAPIController@submit');

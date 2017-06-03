@@ -1807,7 +1807,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       };
       axios.post('/api/survey/create', data).then(function (res) {
         _this.submitted = true;
-        console.log(res.data);
+        window.location = res.data;
       });
     },
     saveQuestion: function saveQuestion(question) {

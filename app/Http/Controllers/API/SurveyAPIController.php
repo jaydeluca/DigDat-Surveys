@@ -15,6 +15,9 @@ class SurveyAPIController extends Controller
 
     /**
      * Get Individual Survey
+     *
+     * @param Survey $id
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null|static|static[]
      */
     public function show(Survey $id)
     {
@@ -45,8 +48,18 @@ class SurveyAPIController extends Controller
         }
     }
 
+    /**
+     * Create a survey, returns the path to newly created survey
+     *
+     * @param Request $request
+     * @return string
+     */
     public function create(Request $request)
     {
+
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
 
         $survey = $request->input('survey');
 
@@ -70,7 +83,7 @@ class SurveyAPIController extends Controller
             }
 
         }
-
+        return $newSurvey->path();
     }
 
 }

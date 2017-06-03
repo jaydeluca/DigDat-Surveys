@@ -86,7 +86,7 @@
         };
         axios.post('/api/survey/create', data).then(res => {
           this.submitted = true;
-          console.log(res.data)
+          window.location = res.data;
         })
       },
 
