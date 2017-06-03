@@ -16,10 +16,22 @@
     color: white;
     font-weight: 700;
     text-transform: uppercase;
+
+    &:hover {
+      background-color: darken($color-accent, 4) !important;
+    }
+
   }
 
   &--lg {
     padding: 22px 40px;
   }
 
+}
+
+.is-primary {
+  background-color: $color-accent !important;
+  &:hover {
+    background-color: darken($color-accent, 4) !important;
+  }
 }

@@ -42,22 +42,25 @@
 
 </head>
 <body>
-<div id="app">
+<div class="page-container">
 
     @include('layouts.nav')
 
-    @yield('content')
+    <div id="app">
+        @yield('content')
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>DigDat Surveys</strong> a Free Survey Tool
+                </p>
+            </div>
+        </div>
+    </footer>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <div class="content has-text-centered">
-            <p>
-                <strong>DigDat Surveys</strong> a Free Survey Tool
-            </p>
-        </div>
-    </div>
-</footer>
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
