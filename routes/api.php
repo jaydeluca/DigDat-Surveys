@@ -22,7 +22,7 @@ Route::group([
     'namespace' => 'API',
 ], function () {
     Route::post('survey/submit', 'SurveyAPIController@submit');
-    Route::post('survey/create', 'SurveyAPIController@create');
+    Route::post('survey/create', 'SurveyAPIController@store');
     Route::get('survey/{id}', 'SurveyAPIController@show');
     Route::get('answers/{id}', 'AnswersAPIController@show');
 });

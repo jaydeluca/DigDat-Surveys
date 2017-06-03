@@ -54,11 +54,12 @@ class SurveyAPIController extends Controller
      * @param Request $request
      * @return string
      */
-    public function create(Request $request)
+    public function store(Request $request)
     {
 
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
+            'user_id' => 'required|exists:users,id'
         ]);
 
         $survey = $request->input('survey');
