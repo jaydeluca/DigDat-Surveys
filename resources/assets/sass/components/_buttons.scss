@@ -8,8 +8,6 @@
     box-shadow: 6px 6px 16px -5px rgba(0,0,0,0.63);
   }
 
-
-
   &--primary {
     border: 0;
     background-color: $color-accent;
@@ -29,6 +27,7 @@
 
 }
 
+/* Overwriting Bulma Defaults */
 .is-primary {
   background-color: $color-accent !important;
   &:hover {

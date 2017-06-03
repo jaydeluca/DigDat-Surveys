@@ -5,7 +5,7 @@
         <div class="columns">
             <div class="column">
                 <div class="card is-one-third">
-                    <div class="card-header">
+                    <div class="card-header background-accent">
                         <p class="card-header-title">Your Surveys</p>
                     </div>
                     <div class="card-content">
@@ -20,7 +20,7 @@
 
             <div class="column">
                 <div class="card is-one-third">
-                    <div class="card-header">
+                    <div class="card-header background-accent">
                         <p class="card-header-title">Latest Surveys</p>
                     </div>
                     <div class="card-content">

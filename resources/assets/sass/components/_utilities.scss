@@ -10,3 +10,22 @@
 .u-button-like {
   cursor: pointer;
 }
+
+.background-primary {
+  background-color: $color-background;
+  p {
+    color: white;
+  }
+}
+
+.background-accent {
+  background-color: $color-accent;
+  color: white;
+  p {
+    color: white;
+  }
+}
+
+.background-alternate {
+  background-color: $color-alternate;
+}
