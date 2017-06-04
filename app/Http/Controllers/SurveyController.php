@@ -23,6 +23,8 @@ class SurveyController extends Controller
     }
 
     /**
+     * Form for a user to take a survey (create submission)
+     *
      * @param $user_slug
      * @param Survey $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -36,6 +38,13 @@ class SurveyController extends Controller
         return view('pages.take-survey')->with(['survey' => $id]);
     }
 
+    /**
+     * Persist Survey
+     *  - Moved to API, not sure which will end up in use yet
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Request $request)
     {
         $survey = Survey::create($request->all());
@@ -63,7 +72,7 @@ class SurveyController extends Controller
     }
 
     /**
-     * Form for creating a new form
+     * Form for creating a new Survey
      * - Most of the heavy lifting is done in Vue
      * - See CreateSurvey.vue
      *

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="hero is-fullheight is-dark is-bold">
+    <section class="hero">
         <div class="hero-body" style="flex-direction: column;">
             <div class="container">
                 <div clas="columns">

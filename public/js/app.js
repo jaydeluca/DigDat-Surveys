@@ -1967,20 +1967,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -19763,20 +19749,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "justify-content": "space-between",
       "align-items": "baseline"
     }
-  }, [_c('h3', [_vm._v(_vm._s(_vm.survey.name))]), _vm._v(" "), _c('div', [_c('strong', [_vm._v("\n                                Submissions: " + _vm._s(_vm.submissions) + "\n                            ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-sm-12"
-  }, [_c('strong', [_vm._v("Referrals:")]), _vm._v(" "), _vm._l((_vm.referrers), function(referrer, index) {
-    return _c('div', {
-      staticClass: "referrer",
-      class: {
-        'alternate-question': _vm.isEven(index)
-      }
-    }, [_c('div', [_vm._v(_vm._s(referrer.url))]), _vm._v(" "), _c('div', [_vm._v(_vm._s(referrer.pageViews))])])
-  })], 2)])])]), _vm._v(" "), _c('div', {
+  }, [_c('h3', [_vm._v(_vm._s(_vm.survey.name))]), _vm._v(" "), _c('div', [_c('strong', [_vm._v("\n                                Submissions: " + _vm._s(_vm.submissions) + "\n                            ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
