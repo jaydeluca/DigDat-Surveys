@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero">
+    <section class="hero background-alternate">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-vcentered">

@@ -12,8 +12,14 @@
                         <ul class="u-nice-list">
                             @foreach ($user_surveys as $survey)
                                 <li>
-                                    <a href="/results/{{ $survey->id }}">
+                                    <a href="{{ $survey->path() }}">
                                         {{ $survey->name }}
+                                    </a>
+                                    <a href="">
+                                        Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="/results/{{ $survey->id }}">
+                                        Results <i class="fa fa-bar-chart" aria-hidden="true"></i>
                                     </a>
                                 </li>
                             @endforeach

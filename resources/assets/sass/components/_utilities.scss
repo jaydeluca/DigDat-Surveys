@@ -38,6 +38,18 @@
   li {
     padding: 3px;
     border-bottom: 1px solid #dadada;
+    display: flex;
+
+    > * {
+      display: flex;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    i {
+      margin: 0 5px;
+      align-self: center;
+    }
 
     &:hover {
       background-color: rgba($color-alternate, 0.1);

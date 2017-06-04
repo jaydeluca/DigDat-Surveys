@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero">
+    <section class="hero background-alternate">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-vcentered">
@@ -28,9 +28,16 @@
                                 </div>
 
                                 <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
-                                    <label class="label">URL Slug</label>
+                                    <label class="label">Public URL for your Surveys</label>
+                                    <p style="margin: 10px 5px;">If you create surveys, they will be located at: digdatsurveys.com/your-public-url/survey-name</p>
                                     <p class="control">
-                                        <input id="slug" type="text" class="input" name="slug" value="{{ old('slug') }}" required autofocus>
+                                        <input id="slug"
+                                               placeholder="Ex: joes-surveys"
+                                               type="text"
+                                               class="input"
+                                               name="slug"
+                                               value="{{ old('slug') }}"
+                                               required autofocus>
 
                                         @if ($errors->has('slug'))
                                             <span class="help-block">
