@@ -14,7 +14,7 @@
         </div>
     </section>
 
-    <section class="cta">
+    <section class="cta background-white">
 
         <a href="/surveys/create" class="button c-btn c-btn--primary c-btn--lg">Create a Survey</a>
         <a href="/surveys" class="button c-btn c-btn--primary c-btn--lg">Browse Surveys</a>

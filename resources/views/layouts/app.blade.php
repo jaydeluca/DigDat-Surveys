@@ -46,7 +46,7 @@
 
     <div class="page-container">
 
-        <div id="app">
+        <div id="app" class="background-alternate">
             @yield('content')
         </div>
 

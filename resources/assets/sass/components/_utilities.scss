@@ -13,7 +13,7 @@
 
 .background-primary {
   background-color: $color-background;
-  p {
+  p, label {
     color: white;
   }
 }
@@ -21,11 +21,27 @@
 .background-accent {
   background-color: $color-accent;
   color: white;
-  p {
+  p, label {
     color: white;
   }
 }
 
 .background-alternate {
   background-color: $color-alternate;
+}
+
+.background-white {
+  background-color: white;
+}
+
+.u-nice-list {
+  li {
+    padding: 3px;
+    border-bottom: 1px solid #dadada;
+
+    &:hover {
+      background-color: rgba($color-alternate, 0.1);
+    }
+
+  }
 }

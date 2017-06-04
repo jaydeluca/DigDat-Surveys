@@ -1770,6 +1770,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1967,6 +1968,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -19737,10 +19740,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "container"
   }, [_c('div', {
-    staticClass: "row"
+    staticClass: "section"
   }, [_c('div', {
-    staticClass: "col-md-12"
-  }, [(_vm.dataLoading) ? [_vm._v("\n                Loading...\n            ")] : [_c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column"
+  }, [(_vm.dataLoading) ? [_vm._v("\n                    Loading...\n                ")] : [_c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading",
@@ -19749,7 +19754,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "justify-content": "space-between",
       "align-items": "baseline"
     }
-  }, [_c('h3', [_vm._v(_vm._s(_vm.survey.name))]), _vm._v(" "), _c('div', [_c('strong', [_vm._v("\n                                Submissions: " + _vm._s(_vm.submissions) + "\n                            ")])])])]), _vm._v(" "), _c('div', {
+  }, [_c('h3', [_vm._v(_vm._s(_vm.survey.name))]), _vm._v(" "), _c('div', [_c('strong', [_vm._v("\n                                    Submissions: " + _vm._s(_vm.submissions) + "\n                                ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
@@ -19768,9 +19773,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, _vm._l((question.options), function(option) {
       return _c('div', {
         staticClass: "col-md-3 well well-sm answer"
-      }, [_vm._v("\n                                    " + _vm._s(option.option) + "\n                                    "), _c('strong', [_vm._v(_vm._s(option.count) + " (" + _vm._s(_vm.percentageCalc(option.count, question.total)) + "%)")])])
+      }, [_vm._v("\n                                        " + _vm._s(option.option) + "\n                                        "), _c('strong', [_vm._v(_vm._s(option.count) + " (" + _vm._s(_vm.percentageCalc(option.count, question.total)) + "%)")])])
     }))], 1)
-  }))])]], 2)])])
+  }))])]], 2)])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -19846,7 +19851,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "title is-4"
   }, [_vm._v("Questions:")]), _vm._v(" "), _vm._l((_vm.survey.questions), function(question) {
     return _c('div', {
-      staticClass: "box has-text-dark"
+      staticClass: "box background-primary"
     }, [_c('strong', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('ul', _vm._l((question.options), function(option) {
       return _c('li', [_vm._v("\n                        " + _vm._s(option) + "\n                    ")])
     }))])

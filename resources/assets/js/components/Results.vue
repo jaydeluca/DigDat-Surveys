@@ -1,53 +1,56 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="section">
+            <div class="columns">
+                <div class="column">
 
-                <template v-if="dataLoading">
-                    Loading...
-                </template>
+                    <template v-if="dataLoading">
+                        Loading...
+                    </template>
 
-                <template v-else>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" style="display: flex; justify-content: space-between; align-items: baseline;">
-                            <h3>{{ survey.name }}</h3>
-                            <div>
-                                <strong>
-                                    Submissions: {{ submissions }}
-                                </strong>
+                    <template v-else>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="display: flex; justify-content: space-between; align-items: baseline;">
+                                <h3>{{ survey.name }}</h3>
+                                <div>
+                                    <strong>
+                                        Submissions: {{ submissions }}
+                                    </strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Questions:</div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Questions:</div>
 
-                        <div class="panel-body">
+                            <div class="panel-body">
 
-                            <div v-for="(question, index) in questions" class="question" :class="{ 'alternate-question': isEven(index)}">
-                                <blockquote>
-                                    <p class="question-text">{{ question.question }}</p>
-                                </blockquote>
-                                <div class="row answers">
-                                    <div class="col-md-3 well well-sm answer" v-for="option in question.options">
-                                        {{ option.option }}
-                                        <strong>{{ option.count }} ({{ percentageCalc(option.count, question.total) }}%)</strong>
+                                <div v-for="(question, index) in questions" class="question" :class="{ 'alternate-question': isEven(index)}">
+                                    <blockquote>
+                                        <p class="question-text">{{ question.question }}</p>
+                                    </blockquote>
+                                    <div class="row answers">
+                                        <div class="col-md-3 well well-sm answer" v-for="option in question.options">
+                                            {{ option.option }}
+                                            <strong>{{ option.count }} ({{ percentageCalc(option.count, question.total) }}%)</strong>
+                                        </div>
                                     </div>
+
                                 </div>
 
                             </div>
-
                         </div>
-                    </div>
-                </template>
-
+                    </template>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+
   export default {
+
     data() {
       return {
         dataLoading: false,
@@ -57,7 +60,6 @@
         referrers: window.referrers
       }
     },
-
 
     created() {
       this.getSurvey();

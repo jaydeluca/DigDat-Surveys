@@ -24,7 +24,8 @@
                 </div>
 
                 <span class="title is-4">Questions:</span>
-                <div class="box has-text-dark" v-for="question in survey.questions">
+
+                <div class="box background-primary" v-for="question in survey.questions">
                     <strong>{{ question.question }}</strong>
                     <hr>
 
