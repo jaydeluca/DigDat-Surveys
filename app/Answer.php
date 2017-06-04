@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
 {
+
     protected $fillable = [
         'submission_id',
         'question_id',
@@ -14,6 +15,8 @@ class Answer extends Model
 
     /**
      * Submission this Answer belongs to
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function submission()
     {
@@ -22,6 +25,8 @@ class Answer extends Model
 
     /**
      * Which Question this answer answers
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function question()
     {
@@ -30,6 +35,8 @@ class Answer extends Model
 
     /**
      * Which option is the answer
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function option()
     {

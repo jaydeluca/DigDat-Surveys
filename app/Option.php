@@ -17,6 +17,8 @@ class Option extends Model
 
     /**
      * The Question this option is for
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function question()
     {

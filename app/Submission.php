@@ -16,6 +16,8 @@ class Submission extends Model
 
     /**
      * The survey this submission belongs to
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function survey()
     {
@@ -24,6 +26,8 @@ class Submission extends Model
 
     /**
      * A submission's answers (responses)
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function answers()
     {

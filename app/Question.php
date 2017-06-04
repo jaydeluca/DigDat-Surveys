@@ -14,6 +14,8 @@ class Question extends Model
 
     /**
      * What Survey this question is for
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function survey()
     {
@@ -22,6 +24,8 @@ class Question extends Model
 
     /**
      * A question's answer options
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function options()
     {
@@ -30,6 +34,8 @@ class Question extends Model
 
     /**
      * Answers submitted for this question
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function answers()
     {
