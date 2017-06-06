@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Survey;
 use JavaScript;
-use Analytics;
-use Spatie\Analytics\Period;
 
 class SurveyController extends Controller
 {
@@ -76,21 +74,30 @@ class SurveyController extends Controller
      */
     public function resultsPage(Survey $survey)
     {
-        $questions = Survey::find($survey->id)->questions()->get()->map(function ($item) {
+        $questions = $this->formatSurveyQuestions($survey);
+        $submissions = $survey->submissions()->count();
+
+        return view('pages.results', compact('survey', 'questions', 'submissions'));
+    }
+
+    /**
+     * Format the data to include some meta data calculations
+     *
+     * @param Survey $survey
+     * @return mixed
+     */
+    public function formatSurveyQuestions(Survey $survey)
+    {
+        return Survey::find($survey->id)->questions()->get()->map(function ($item) {
             $item["options"] = $item->options()->get()->map(function ($option) {
                 return [
                     'option' => $option["label"],
                     'count' => $option->answers()->count()
                 ];
-
             });
             $item["total"] = $item["options"]->pluck('count')->sum();
             return $item;
         });
-
-        $submissions = $survey->submissions()->count();
-
-        return view('pages.results', compact('survey', 'questions', 'submissions'));
     }
 
 }
