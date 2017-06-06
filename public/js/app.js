@@ -840,7 +840,6 @@ __webpack_require__(34);
  */
 
 Vue.component('survey', __webpack_require__(41));
-Vue.component('results', __webpack_require__(40));
 Vue.component('create-survey', __webpack_require__(37));
 Vue.component('percentage', __webpack_require__(39));
 
@@ -1945,109 +1944,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 32 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      dataLoading: false,
-      survey: window.survey,
-      submissions: window.submissions,
-      questions: {},
-      referrers: window.referrers
-    };
-  },
-  created: function created() {
-    this.getSurvey();
-  },
-
-
-  methods: {
-    percentageCalc: function percentageCalc(value, total) {
-      return Math.round(value / total * 100);
-    },
-    isEven: function isEven(index) {
-      return index % 2 === 0;
-    },
-    getSurvey: function getSurvey() {
-      var _this = this;
-
-      this.dataLoading = true;
-      var survey_id = this.survey.id;
-      axios.get('/api/answers/' + survey_id).then(function (res) {
-        var questions = res.data;
-        questions.forEach(function (item) {
-          var total = 0;
-          item.options.forEach(function (item) {
-            total += item.count;
-          });
-          item.total = total;
-        });
-
-        _this.questions = questions;
-        _this.dataLoading = false;
-      });
-    }
-  }
-
-});
-
-/***/ }),
+/* 32 */,
 /* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -19569,40 +19466,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(32),
-  /* template */
-  __webpack_require__(45),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Users/jaydeluca/code/JD/DigDatSurvey/resources/assets/js/components/Results.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Results.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3f7adb3a", Component.options)
-  } else {
-    hotAPI.reload("data-v-3f7adb3a", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 40 */,
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19813,59 +19677,7 @@ if (false) {
 }
 
 /***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container results"
-  }, [_c('div', {
-    staticClass: "section"
-  }, [_c('div', {
-    staticClass: "columns"
-  }, [_c('div', {
-    staticClass: "column"
-  }, [(_vm.dataLoading) ? [_vm._v("\n                    Loading...\n                ")] : [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading",
-    staticStyle: {
-      "display": "flex",
-      "justify-content": "space-between",
-      "align-items": "baseline"
-    }
-  }, [_c('h3', [_vm._v(_vm._s(_vm.survey.name))]), _vm._v(" "), _c('div', [_c('strong', [_vm._v("\n                                    Submissions: " + _vm._s(_vm.submissions) + "\n                                ")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Questions:")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, _vm._l((_vm.questions), function(question, index) {
-    return _c('div', {
-      staticClass: "question",
-      class: {
-        'alternate-question': _vm.isEven(index)
-      }
-    }, [_c('blockquote', [_c('p', {
-      staticClass: "question-text"
-    }, [_vm._v(_vm._s(question.question))])]), _vm._v(" "), _c('div', {
-      staticClass: "columns answers"
-    }, _vm._l((question.options), function(option) {
-      return _c('div', {
-        staticClass: "column is-4 well well-sm answer"
-      }, [_vm._v("\n                                        " + _vm._s(option.option) + "\n                                        "), _c('strong', [_vm._v(_vm._s(option.count) + " (" + _vm._s(_vm.percentageCalc(option.count, question.total)) + "%)")])])
-    }))], 1)
-  }))])]], 2)])])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3f7adb3a", module.exports)
-  }
-}
-
-/***/ }),
+/* 45 */,
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 

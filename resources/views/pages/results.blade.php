@@ -11,16 +11,16 @@
             </p>
         </div>
 
-        <div class="columns">
+        <div class="questions">
             @foreach ($questions as $question)
-                <div class="column is-half">
+                <div class="column question card">
                     <blockquote>
                         <p class="question-text">{{ $question->question }}</p>
                     </blockquote>
                     <div class="columns answers">
                         @foreach ($question->options as $option)
-                            <div class="column well well-sm answer">
-                                {{ $option["option"] }}
+                            <div class="column option">
+                                <span>{{ $option["option"] }}</span>
                                 <strong>{{ $option["count"] }}</strong>
                                 <percentage count="{{ $option["count"] }}" total="{{ $question->total }}"></percentage>
                             </div>
@@ -29,7 +29,6 @@
                 </div>
             @endforeach
         </div>
-
 
     </div>
 
