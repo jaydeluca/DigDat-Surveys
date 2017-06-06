@@ -15,6 +15,7 @@ require('./bootstrap');
 Vue.component('survey', require('./components/TakeSurvey.vue'));
 Vue.component('results', require('./components/Results.vue'));
 Vue.component('create-survey', require('./components/CreateSurvey.vue'));
+Vue.component('percentage', require('./components/PercentageCalculator.vue'));
 
 const app = new Vue({
   el: '#app'

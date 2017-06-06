@@ -30,6 +30,7 @@
 @import "./components/buttons";
 @import "./components/welcome";
 @import "./components/footer";
+@import "./components/results";
 
 // Overwrites
 @import "overwrites";
@@ -62,37 +63,4 @@ body {
 
 #app {
   flex-grow: 1;
-}
-
-.question {
-
-  .question-text {
-    font-size: 18px;
-  }
-
-  .answers {
-    margin: 5px 15px;
-  }
-
-  .answer {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 20px;
-  }
-
-  blockquote {
-    border-left: 5px solid #64b5f6;
-  }
-
-}
-.alternate-question {
-  background: #F8F9F9;
-}
-
-.referrer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 15px;
-  border: 1px solid #ddd;
 }

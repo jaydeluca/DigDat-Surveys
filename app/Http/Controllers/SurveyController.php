@@ -53,25 +53,6 @@ class SurveyController extends Controller
     }
 
     /**
-     * Show the Results of a Survey
-     * - Most of this page is handled in Vue
-     * - See Results.vue
-     *
-     * @param Survey $survey
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function resultsPage(Survey $survey)
-    {
-        JavaScript::put([
-            'survey' => $survey,
-            'submissions' => $survey->submissions()->count(),
-            'referrers' => Analytics::fetchTopReferrers(Period::days(90))
-        ]);
-
-        return view('results');
-    }
-
-    /**
      * Form for creating a new Survey
      * - Most of the heavy lifting is done in Vue
      * - See CreateSurvey.vue
@@ -86,4 +67,33 @@ class SurveyController extends Controller
 
         return view('pages.create-survey');
     }
+
+    /**
+     * Show the Results of a Survey
+     *
+     * @param Survey $survey
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function resultsPage(Survey $survey)
+    {
+
+        $questions = Survey::find($survey->id)->questions()->get()->map(function ($item) {
+            $item["options"] = $item->options()->get()->map(function ($option) {
+                return [
+                    'option' => $option["label"],
+                    'count' => $option->answers()->count()
+                ];
+
+            });
+            $item["total"] = $item["options"]->pluck('count')->sum();
+            return $item;
+        });
+
+//         dd($questions);
+
+        $submissions = $survey->submissions()->count();
+
+        return view('pages.results', compact('survey', 'questions', 'submissions'));
+    }
+
 }

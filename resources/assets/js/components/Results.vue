@@ -1,5 +1,6 @@
 <template>
-    <div class="container">
+
+    <div class="container results">
         <div class="section">
             <div class="columns">
                 <div class="column">
@@ -29,8 +30,8 @@
                                     <blockquote>
                                         <p class="question-text">{{ question.question }}</p>
                                     </blockquote>
-                                    <div class="row answers">
-                                        <div class="col-md-3 well well-sm answer" v-for="option in question.options">
+                                    <div class="columns answers">
+                                        <div class="column is-4 well well-sm answer" v-for="option in question.options">
                                             {{ option.option }}
                                             <strong>{{ option.count }} ({{ percentageCalc(option.count, question.total) }}%)</strong>
                                         </div>
