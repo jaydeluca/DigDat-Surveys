@@ -1,6 +1,6 @@
 <template>
     <span>
-        {{ result }}
+        ({{ result }}%)
     </span>
 </template>
 

@@ -76,7 +76,6 @@ class SurveyController extends Controller
      */
     public function resultsPage(Survey $survey)
     {
-
         $questions = Survey::find($survey->id)->questions()->get()->map(function ($item) {
             $item["options"] = $item->options()->get()->map(function ($option) {
                 return [
@@ -88,8 +87,6 @@ class SurveyController extends Controller
             $item["total"] = $item["options"]->pluck('count')->sum();
             return $item;
         });
-
-//         dd($questions);
 
         $submissions = $survey->submissions()->count();
 

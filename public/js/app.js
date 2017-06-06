@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 46);
+/******/ 	return __webpack_require__(__webpack_require__.s = 49);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -528,7 +528,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)))
 
 /***/ }),
 /* 3 */
@@ -831,7 +831,7 @@ module.exports = g;
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(33);
+__webpack_require__(34);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -839,10 +839,10 @@ __webpack_require__(33);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('survey', __webpack_require__(39));
-Vue.component('results', __webpack_require__(38));
-Vue.component('create-survey', __webpack_require__(36));
-Vue.component('percentage', __webpack_require__(51));
+Vue.component('survey', __webpack_require__(41));
+Vue.component('results', __webpack_require__(40));
+Vue.component('create-survey', __webpack_require__(37));
+Vue.component('percentage', __webpack_require__(39));
 
 var app = new Vue({
   el: '#app'
@@ -1821,7 +1821,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   components: {
-    'survey-question': __webpack_require__(37)
+    'survey-question': __webpack_require__(38)
   }
 
 });
@@ -1927,6 +1927,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  props: ['count', 'total'],
+
+  computed: {
+    result: function result() {
+      if (this.count) {
+        return Math.round(this.count / this.total * 100);
+      }
+      return 0;
+    }
+  }
+
+});
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2019,7 +2048,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2112,7 +2141,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -2121,8 +2150,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = __webpack_require__(44);
-window._ = __webpack_require__(34);
+window.Vue = __webpack_require__(47);
+window._ = __webpack_require__(35);
 
 // For communicating between components
 window.AppEvents = new Vue();
@@ -2156,7 +2185,7 @@ window.axios.defaults.headers.common = {
 // });
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -19245,10 +19274,10 @@ window.axios.defaults.headers.common = {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(45)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(48)(module)))
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -19438,14 +19467,14 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(29),
   /* template */
-  __webpack_require__(43),
+  __webpack_require__(46),
   /* scopeId */
   null,
   /* cssModules */
@@ -19472,14 +19501,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(30),
   /* template */
-  __webpack_require__(41),
+  __webpack_require__(43),
   /* scopeId */
   null,
   /* cssModules */
@@ -19506,14 +19535,48 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(31),
   /* template */
-  __webpack_require__(42),
+  __webpack_require__(44),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/jaydeluca/code/JD/DigDatSurvey/resources/assets/js/components/PercentageCalculator.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PercentageCalculator.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-30c02dc2", Component.options)
+  } else {
+    hotAPI.reload("data-v-30c02dc2", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(32),
+  /* template */
+  __webpack_require__(45),
   /* scopeId */
   null,
   /* cssModules */
@@ -19540,14 +19603,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(32),
+  __webpack_require__(33),
   /* template */
-  __webpack_require__(40),
+  __webpack_require__(42),
   /* scopeId */
   null,
   /* cssModules */
@@ -19574,7 +19637,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19643,7 +19706,7 @@ if (false) {
 }
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19735,7 +19798,22 @@ if (false) {
 }
 
 /***/ }),
-/* 42 */
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_vm._v("\n    (" + _vm._s(_vm.result) + "%)\n")])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-30c02dc2", module.exports)
+  }
+}
+
+/***/ }),
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19788,7 +19866,7 @@ if (false) {
 }
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19853,7 +19931,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "title is-4"
   }, [_vm._v("Questions:")]), _vm._v(" "), _vm._l((_vm.survey.questions), function(question) {
     return _c('div', {
-      staticClass: "box background-primary"
+      staticClass: "box"
     }, [_c('strong', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('ul', _vm._l((question.options), function(option) {
       return _c('li', [_vm._v("\n                        " + _vm._s(option) + "\n                    ")])
     }))])
@@ -19880,7 +19958,7 @@ if (false) {
 }
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29507,7 +29585,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -29535,93 +29613,12 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);
 module.exports = __webpack_require__(10);
 
-
-/***/ }),
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-
-  props: ['count', 'total'],
-
-  computed: {
-    result: function result() {
-      if (this.count) {
-        return Math.round(this.count / this.total * 100);
-      }
-      return 0;
-    }
-  }
-
-});
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(50),
-  /* template */
-  __webpack_require__(52),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Users/jaydeluca/code/JD/DigDatSurvey/resources/assets/js/components/PercentageCalculator.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] PercentageCalculator.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-30c02dc2", Component.options)
-  } else {
-    hotAPI.reload("data-v-30c02dc2", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', [_vm._v("\n    " + _vm._s(_vm.result) + "\n")])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-30c02dc2", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);

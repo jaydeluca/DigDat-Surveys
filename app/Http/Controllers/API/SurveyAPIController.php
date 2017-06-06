@@ -57,11 +57,6 @@ class SurveyAPIController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, [
-            'name' => 'required',
-            'user_id' => 'required|exists:users,id'
-        ]);
-
         $survey = $request->input('survey');
 
         $newSurvey = Survey::create([

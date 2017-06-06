@@ -13,18 +13,16 @@
 
         <div class="columns">
             @foreach ($questions as $question)
-                <div class="column is-4">
+                <div class="column is-half">
                     <blockquote>
                         <p class="question-text">{{ $question->question }}</p>
                     </blockquote>
                     <div class="columns answers">
                         @foreach ($question->options as $option)
-                            <div class="column is-4 well well-sm answer">
+                            <div class="column well well-sm answer">
                                 {{ $option["option"] }}
                                 <strong>{{ $option["count"] }}</strong>
-                                (<percentage count="{{ $option["count"] }}"
-                                             total="{{ $question->total }}">
-                                </percentage>)
+                                <percentage count="{{ $option["count"] }}" total="{{ $question->total }}"></percentage>
                             </div>
                         @endforeach
                     </div>
