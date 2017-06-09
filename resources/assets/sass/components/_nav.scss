@@ -25,6 +25,7 @@ a.logo {
 
 .nav-item a:hover, a.nav-item:hover {
   color: $color-accent;
+  transform: translateY(-3px) scale(1.0);
 }
 
 .nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
