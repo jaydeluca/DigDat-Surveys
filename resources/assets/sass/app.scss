@@ -31,9 +31,13 @@
 @import "./components/welcome";
 @import "./components/footer";
 @import "./components/results";
+@import "./components/alert";
 
 // Overwrites
 @import "overwrites";
+
+// Animations
+@import "animations";
 
 html {
   height: 100%;

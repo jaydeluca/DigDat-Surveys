@@ -1,0 +1,28 @@
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0;
+    transform: translate3d(0, 2%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.a-fade-in--up {
+  animation: .5s fadeInUp;
+}
+
+.a-fade-in--up--slow {
+  animation: 1s fadeInUp;
+}
+
+.u-color--alt {
+  color: var(--color-accent);
+}

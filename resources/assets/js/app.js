@@ -38,6 +38,5 @@ function closeDropdownsIfAnyClick(ev) {
   return true;
 }
 
+// close dropdowns if clicked anywhere
 document.querySelector('body').addEventListener('click', closeDropdownsIfAnyClick);
-
-

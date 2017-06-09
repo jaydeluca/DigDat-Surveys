@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 49);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -528,7 +528,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35)))
 
 /***/ }),
 /* 3 */
@@ -831,7 +831,7 @@ module.exports = g;
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(34);
+__webpack_require__(33);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -839,9 +839,9 @@ __webpack_require__(34);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('survey', __webpack_require__(41));
-Vue.component('create-survey', __webpack_require__(37));
-Vue.component('percentage', __webpack_require__(39));
+Vue.component('survey', __webpack_require__(39));
+Vue.component('create-survey', __webpack_require__(36));
+Vue.component('percentage', __webpack_require__(38));
 
 var app = new Vue({
   el: '#app'
@@ -863,6 +863,7 @@ function closeDropdownsIfAnyClick(ev) {
   return true;
 }
 
+// close dropdowns if clicked anywhere
 document.querySelector('body').addEventListener('click', closeDropdownsIfAnyClick);
 
 /***/ }),
@@ -1820,7 +1821,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   components: {
-    'survey-question': __webpack_require__(38)
+    'survey-question': __webpack_require__(37)
   }
 
 });
@@ -1892,6 +1893,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     optionCount: function optionCount() {
       return this.question.options.length;
+    },
+    disableSave: function disableSave() {
+      // don't allow to save unless more than 1 option created
+      return this.optionCount < 2 || !this.question.question;
     }
   },
 
@@ -1944,8 +1949,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 32 */,
-/* 33 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2038,7 +2042,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -2047,8 +2051,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = __webpack_require__(47);
-window._ = __webpack_require__(35);
+window.Vue = __webpack_require__(44);
+window._ = __webpack_require__(34);
 
 // For communicating between components
 window.AppEvents = new Vue();
@@ -2082,7 +2086,7 @@ window.axios.defaults.headers.common = {
 // });
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -19171,10 +19175,10 @@ window.axios.defaults.headers.common = {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(48)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(45)(module)))
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -19364,14 +19368,14 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(29),
   /* template */
-  __webpack_require__(46),
+  __webpack_require__(43),
   /* scopeId */
   null,
   /* cssModules */
@@ -19398,14 +19402,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(30),
   /* template */
-  __webpack_require__(43),
+  __webpack_require__(41),
   /* scopeId */
   null,
   /* cssModules */
@@ -19432,14 +19436,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(31),
   /* template */
-  __webpack_require__(44),
+  __webpack_require__(42),
   /* scopeId */
   null,
   /* cssModules */
@@ -19466,15 +19470,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 40 */,
-/* 41 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(33),
+  __webpack_require__(32),
   /* template */
-  __webpack_require__(42),
+  __webpack_require__(40),
   /* scopeId */
   null,
   /* cssModules */
@@ -19501,7 +19504,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 42 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19570,7 +19573,7 @@ if (false) {
 }
 
 /***/ }),
-/* 43 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19601,7 +19604,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.question.question = $event.target.value
       }
     }
-  })])]), _vm._v(" "), _c('strong', [_vm._v("Options:")]), _vm._v(" "), (_vm.optionCount < 1) ? [_vm._v("\n        Add options\n    ")] : [_c('ul', _vm._l((_vm.question.options), function(option) {
+  })])]), _vm._v(" "), _c('strong', [_vm._v("Options:")]), _vm._v(" "), _c('ul', _vm._l((_vm.question.options), function(option) {
     return _c('li', [_vm._v("\n                " + _vm._s(option) + "\n                "), _c('span', {
       staticClass: "u-margin-left u-button-like",
       on: {
@@ -19612,7 +19615,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('i', {
       staticClass: "fa fa-minus-circle"
     })])])
-  }))], _vm._v(" "), _c('div', {
+  })), _vm._v(" "), _c('div', {
     staticClass: "field"
   }, [_c('div', {
     staticClass: "field u-inline"
@@ -19646,12 +19649,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-plus"
-  })])])]), _vm._v(" "), _c('button', {
+  })])])]), _vm._v(" "), (_vm.disableSave) ? _c('div', {
+    staticClass: "alert alert--warning"
+  }, [_vm._v("\n        Please Add at least 2 options.\n    ")]) : _vm._e(), _vm._v(" "), _c('button', {
     staticClass: "button is-primary",
+    attrs: {
+      "disabled": _vm.disableSave
+    },
     on: {
       "click": _vm.saveQuestion
     }
-  }, [_vm._v("Save")])], 2)
+  }, [_vm._v("Save")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -19662,7 +19670,7 @@ if (false) {
 }
 
 /***/ }),
-/* 44 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19677,8 +19685,7 @@ if (false) {
 }
 
 /***/ }),
-/* 45 */,
-/* 46 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19770,7 +19777,7 @@ if (false) {
 }
 
 /***/ }),
-/* 47 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29397,7 +29404,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 48 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -29425,7 +29432,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 49 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);

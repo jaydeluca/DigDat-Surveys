@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="home">
+    <section class="home is-active">
         <div class="bg">
             <div class="copy">
                 <h1>Create. Collect. Customize.</h1>

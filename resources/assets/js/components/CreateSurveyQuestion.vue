@@ -8,10 +8,7 @@
             </p>
         </div>
         <strong>Options:</strong>
-        <template v-if="optionCount < 1">
-            Add options
-        </template>
-        <template v-else>
+
             <ul>
                 <li v-for="option in question.options">
                     {{ option }}
@@ -20,7 +17,6 @@
                     </span>
                 </li>
             </ul>
-        </template>
 
         <div class="field">
             <div class="field u-inline">
@@ -34,7 +30,11 @@
             </div>
         </div>
 
-        <button class="button is-primary" @click="saveQuestion">Save</button>
+        <div v-if="disableSave" class="alert alert--warning">
+            Please Add at least 2 options.
+        </div>
+
+        <button class="button is-primary" @click="saveQuestion" :disabled="disableSave">Save</button>
     </div>
 
 </template>
@@ -59,6 +59,11 @@
 
       optionCount() {
         return this.question.options.length;
+      },
+
+      disableSave() {
+        // don't allow to save unless more than 1 option created
+        return this.optionCount < 2 || !this.question.question
       }
 
     },

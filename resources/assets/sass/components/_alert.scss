@@ -1,0 +1,11 @@
+.alert {
+
+  padding: 10px;
+  margin: 10px 0;
+
+  &--warning {
+    background: rgba($color-accent, 0.6);
+    color: white;
+  }
+
+}
