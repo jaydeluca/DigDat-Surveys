@@ -31,7 +31,7 @@
 
                     <ul>
                         <li v-for="option in question.options">
-                            {{ option }}
+                            {{ option.label }} ({{ option.value }})
                         </li>
                     </ul>
                 </div>

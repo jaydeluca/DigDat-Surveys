@@ -73,8 +73,8 @@ class SurveyAPIController extends Controller
 
             foreach ($question["options"] as $option) {
                 $newQuestion->options()->save(new Option([
-                    'label' => $option,
-                    'value' => $option
+                    'label' => $option["label"],
+                    'value' => $option["value"] ?: $option["label"]
                 ]));
             }
 

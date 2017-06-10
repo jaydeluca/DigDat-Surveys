@@ -1873,6 +1873,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1885,7 +1890,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         question: '',
         options: []
       },
-      option: ''
+      option: {
+        label: '',
+        value: ''
+      },
+      showValue: false
     };
   },
 
@@ -1903,7 +1912,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     addOption: function addOption() {
       this.question.options.push(this.option);
-      this.option = '';
+      this.option = {
+        label: '',
+        value: ''
+      };
     },
     removeOption: function removeOption(option) {
       var index = this.question.options.indexOf(option);
@@ -19605,7 +19617,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })])]), _vm._v(" "), _c('strong', [_vm._v("Options:")]), _vm._v(" "), _c('ul', _vm._l((_vm.question.options), function(option) {
-    return _c('li', [_vm._v("\n                " + _vm._s(option) + "\n                "), _c('span', {
+    return _c('li', [_vm._v("\n            " + _vm._s(option) + "\n            "), _c('span', {
       staticClass: "u-margin-left u-button-like",
       on: {
         "click": function($event) {
@@ -19625,8 +19637,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.option),
-      expression: "option"
+      value: (_vm.option.label),
+      expression: "option.label"
     }],
     staticClass: "input",
     attrs: {
@@ -19634,22 +19646,78 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Answer"
     },
     domProps: {
-      "value": (_vm.option)
+      "value": (_vm.option.label)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.option = $event.target.value
+        _vm.option.label = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('span', {
+  })]), _vm._v(" "), (_vm.showValue) ? _c('p', {
+    staticClass: "control"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.option.value),
+      expression: "option.value"
+    }],
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "Answer"
+    },
+    domProps: {
+      "value": (_vm.option.value)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.option.value = $event.target.value
+      }
+    }
+  })]) : _vm._e(), _vm._v(" "), _c('span', {
     staticClass: "u-margin-left u-button-like",
     on: {
       "click": _vm.addOption
     }
   }, [_c('i', {
     staticClass: "fa fa-plus"
-  })])])]), _vm._v(" "), (_vm.disableSave) ? _c('div', {
+  })])]), _vm._v(" "), _c('p', {
+    staticClass: "control"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.showValue),
+      expression: "showValue"
+    }],
+    attrs: {
+      "type": "checkbox"
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.showValue) ? _vm._i(_vm.showValue, null) > -1 : (_vm.showValue)
+    },
+    on: {
+      "__c": function($event) {
+        var $$a = _vm.showValue,
+          $$el = $event.target,
+          $$c = $$el.checked ? (true) : (false);
+        if (Array.isArray($$a)) {
+          var $$v = null,
+            $$i = _vm._i($$a, $$v);
+          if ($$c) {
+            $$i < 0 && (_vm.showValue = $$a.concat($$v))
+          } else {
+            $$i > -1 && (_vm.showValue = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+          }
+        } else {
+          _vm.showValue = $$c
+        }
+      }
+    }
+  }), _vm._v(" Add Score or Value\n        ")])]), _vm._v(" "), (_vm.disableSave) ? _c('div', {
     staticClass: "alert alert--warning"
   }, [_vm._v("\n        Please Add at least 2 options.\n    ")]) : _vm._e(), _vm._v(" "), _c('button', {
     staticClass: "button is-primary",
@@ -19752,7 +19820,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('div', {
       staticClass: "box"
     }, [_c('strong', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('ul', _vm._l((question.options), function(option) {
-      return _c('li', [_vm._v("\n                        " + _vm._s(option) + "\n                    ")])
+      return _c('li', [_vm._v("\n                        " + _vm._s(option.label) + " (" + _vm._s(option.value) + ")\n                    ")])
     }))])
   }), _vm._v(" "), _vm._l((_vm.question_count), function(n) {
     return _c('survey-question', {
