@@ -11,3 +11,9 @@
   color: $color-error;
 
 }
+
+.is-required::after {
+  content: " *";
+  font-weight: 900;
+  color: $color-accent;
+}

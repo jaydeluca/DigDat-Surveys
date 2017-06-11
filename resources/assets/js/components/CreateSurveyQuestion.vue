@@ -1,7 +1,7 @@
 <template>
 
     <div class="box has-text-dark">
-        <strong>Add A Question</strong>
+        <strong class="is-required">Add A Question</strong>
         <div class="field">
             <p class="control">
                 <input class="input" type="text" placeholder="Question" v-model="question.question">
@@ -11,7 +11,7 @@
 
         <ul>
             <li v-for="option in question.options">
-                {{ option }}
+                {{ option.label }} <template v-if="option.value">({{ option.value }})</template>
                 <span class="u-margin-left u-button-like" @click="removeOption(option)">
                     <i class="fa fa-minus-circle"></i>
                 </span>

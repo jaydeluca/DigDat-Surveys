@@ -19536,7 +19536,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card"
   }, [_c('div', {
     staticClass: "card-content questions"
-  }, [(_vm.submitted) ? [_vm._v("\n                        Thanks!\n                    ")] : _vm._l((_vm.survey.questions), function(question) {
+  }, [(_vm.submitted) ? [_vm._v("\n                        Thank you for participating in the survey! ")] : _vm._l((_vm.survey.questions), function(question) {
     return _c('div', {
       staticClass: "section question"
     }, [_c('p', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('span', {
@@ -19597,7 +19597,9 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "box has-text-dark"
-  }, [_c('strong', [_vm._v("Add A Question")]), _vm._v(" "), _c('div', {
+  }, [_c('strong', {
+    staticClass: "is-required"
+  }, [_vm._v("Add A Question")]), _vm._v(" "), _c('div', {
     staticClass: "field"
   }, [_c('p', {
     staticClass: "control"
@@ -19623,7 +19625,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })])]), _vm._v(" "), _c('strong', [_vm._v("Options:")]), _vm._v(" "), _c('ul', _vm._l((_vm.question.options), function(option) {
-    return _c('li', [_vm._v("\n            " + _vm._s(option) + "\n            "), _c('span', {
+    return _c('li', [_vm._v("\n            " + _vm._s(option.label) + " "), (option.value) ? [_vm._v("(" + _vm._s(option.value) + ")")] : _vm._e(), _vm._v(" "), _c('span', {
       staticClass: "u-margin-left u-button-like",
       on: {
         "click": function($event) {
@@ -19632,7 +19634,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('i', {
       staticClass: "fa fa-minus-circle"
-    })])])
+    })])], 2)
   })), _vm._v(" "), _c('div', {
     staticClass: "field"
   }, [_c('div', {
@@ -19772,7 +19774,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "field"
   }, [_c('label', {
-    staticClass: "label"
+    staticClass: "label is-required"
   }, [_vm._v("Name")]), _vm._v(" "), _c('p', {
     staticClass: "control"
   }, [_c('input', {
@@ -19826,7 +19828,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('div', {
       staticClass: "box"
     }, [_c('strong', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('ul', _vm._l((question.options), function(option) {
-      return _c('li', [_vm._v("\n                        " + _vm._s(option.label) + " (" + _vm._s(option.value) + ")\n                    ")])
+      return _c('li', [_vm._v("\n                        " + _vm._s(option.label) + " "), (option.value) ? [_vm._v("(" + _vm._s(option.value) + ")")] : _vm._e()], 2)
     }))])
   }), _vm._v(" "), _vm._l((_vm.question_count), function(n) {
     return _c('survey-question', {

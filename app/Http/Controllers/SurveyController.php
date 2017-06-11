@@ -24,16 +24,16 @@ class SurveyController extends Controller
      * Form for a user to take a survey (create submission)
      *
      * @param $user_slug
-     * @param Survey $id
+     * @param Survey $survey
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($user_slug, Survey $id)
+    public function show($user_slug, Survey $survey)
     {
         JavaScript::put([
-            'survey' => $id,
+            'survey' => $survey,
         ]);
 
-        return view('pages.take-survey')->with(['survey' => $id]);
+        return view('pages.take-survey')->with(['survey' => $survey]);
     }
 
     /**
@@ -72,7 +72,7 @@ class SurveyController extends Controller
      * @param Survey $survey
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function resultsPage(Survey $survey)
+    public function resultsPage($user_slug, Survey $survey)
     {
         $questions = $this->formatSurveyQuestions($survey);
         $submissions = $survey->submissions()->count();

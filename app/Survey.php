@@ -24,6 +24,16 @@ class Survey extends Model
     }
 
     /**
+     * Get a string path for the results page for the survey
+     *
+     * @return string
+     */
+    public function results()
+    {
+        return $this->path() . '/results';
+    }
+
+    /**
      * User who created / owns this survey
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

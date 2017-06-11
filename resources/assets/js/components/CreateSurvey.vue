@@ -6,7 +6,7 @@
 
                 <div class="box">
                     <div class="field">
-                        <label class="label">Name</label>
+                        <label class="label is-required">Name</label>
                         <p class="control">
                             <input class="input" type="text" placeholder="Ex. Patriots Fan Survey"
                                    v-model="survey.name">
@@ -31,7 +31,7 @@
 
                     <ul>
                         <li v-for="option in question.options">
-                            {{ option.label }} ({{ option.value }})
+                            {{ option.label }} <template v-if="option.value">({{ option.value }})</template>
                         </li>
                     </ul>
                 </div>

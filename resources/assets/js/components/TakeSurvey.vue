@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-content questions">
                         <template v-if="submitted">
-                            Thanks!
+                            Thank you for participating in the survey! <a href=""View Results
                         </template>
 
                         <template v-else>

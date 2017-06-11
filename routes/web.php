@@ -18,19 +18,15 @@ Route::group(['middleware' => 'auth'], function () {
     // Surveys
     Route::get('/surveys/create', 'SurveyController@createSurveyPage');
     Route::post('/surveys', 'SurveyController@store');
-
     Route::get('/home', 'HomeController@home');
-
-    Route::get('/results/{survey}', 'SurveyController@resultsPage');
 
 });
 
 // Public Routes
 Route::get('/', 'HomeController@index');
-
-Route::get('/surveys', 'SurveyController@index');
-
 Auth::routes();
 
-Route::get('/surveys/{user_slug}/{id}', 'SurveyController@show');
-
+// Public Survey Pages
+Route::get('/surveys', 'SurveyController@index');
+Route::get('/surveys/{user_slug}/{survey}', 'SurveyController@show');
+Route::get('/surveys/{user_slug}/{survey}/results', 'SurveyController@resultsPage');
