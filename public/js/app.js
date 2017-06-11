@@ -2018,6 +2018,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   name: 'TakeSurvey',
 
+  props: ['resultsPath'],
+
   data: function data() {
     return {
       submitted: false,
@@ -19536,7 +19538,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card"
   }, [_c('div', {
     staticClass: "card-content questions"
-  }, [(_vm.submitted) ? [_vm._v("\n                        Thank you for participating in the survey! ")] : _vm._l((_vm.survey.questions), function(question) {
+  }, [(_vm.submitted) ? [_vm._v("\n                        Thank you for participating in the survey! "), _c('a', {
+    attrs: {
+      "href": _vm.resultsPath
+    }
+  }, [_vm._v("View Results")])] : _vm._l((_vm.survey.questions), function(question) {
     return _c('div', {
       staticClass: "section question"
     }, [_c('p', [_vm._v(_vm._s(question.question))]), _vm._v(" "), _c('span', {

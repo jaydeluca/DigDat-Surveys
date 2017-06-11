@@ -15,7 +15,7 @@
                 </div>
                 <div class="columns">
                     <div class="column is-fullwidth">
-                        <survey></survey>
+                        <survey results-path="{{ $survey->results() }}"></survey>
                     </div>
                 </div>
             </div>
