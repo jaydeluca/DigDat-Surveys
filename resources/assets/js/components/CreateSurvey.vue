@@ -43,7 +43,7 @@
                         :key="n">
                 </survey-question>
 
-                <button class="button is-primary" @click="createSurvey">Submit</button>
+                <button class="button is-primary" @click="createSurvey" :disabled="saveValidation">Submit</button>
 
             </div>
         </div>
@@ -76,6 +76,14 @@
 
     mounted() {
       AppEvents.$on('save-question', this.saveQuestion)
+    },
+
+    computed: {
+
+      saveValidation() {
+        return !this.survey.name || this.survey.questions.length < 2
+      },
+
     },
 
     methods: {

@@ -1799,6 +1799,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
 
+  computed: {
+    saveValidation: function saveValidation() {
+      return !this.survey.name || this.survey.questions.length < 2;
+    }
+  },
+
   methods: {
     createSurvey: function createSurvey() {
       var _this = this;
@@ -19831,6 +19837,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })
   }), _vm._v(" "), _c('button', {
     staticClass: "button is-primary",
+    attrs: {
+      "disabled": _vm.saveValidation
+    },
     on: {
       "click": _vm.createSurvey
     }
