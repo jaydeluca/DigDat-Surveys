@@ -5,15 +5,17 @@
     <div class="container results">
 
         <div class="results--header">
-            <p class="title">
-                Results for <strong>{{ $survey->name }}</strong>
+            <p class="title" style="display: flex; justify-content: space-between;">
+                <span>
+                    Results for <strong>{{ $survey->name }}</strong>
+                </span>
                 <span class="tag is-dark">{{ $submissions }} Submissions</span>
             </p>
         </div>
 
         <div class="questions">
             @foreach ($questions as $question)
-                <div class="column question card">
+                <div class="column question card" style="margin: 10px;">
                     <blockquote>
                         <p class="question-text">{{ $question->question }}</p>
                     </blockquote>
