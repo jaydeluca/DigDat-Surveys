@@ -1,9 +1,7 @@
 <template>
     <div>
-
         <div class="columns">
             <div class="column is-8 is-offset-2">
-
                 <div class="box">
                     <div class="field">
                         <label class="label is-required">Name</label>
@@ -31,7 +29,8 @@
 
                     <ul>
                         <li v-for="option in question.options">
-                            {{ option.label }} <template v-if="option.value">({{ option.value }})</template>
+                            {{ option.label }}
+                            <template v-if="option.value">({{ option.value }})</template>
                         </li>
                     </ul>
                 </div>
@@ -52,11 +51,8 @@
 </template>
 
 <script>
-
   export default {
-
     name: 'CreateSurvey',
-
     data() {
       return {
         submitted: false,
@@ -111,6 +107,5 @@
     components: {
       'survey-question': require('./CreateSurveyQuestion.vue')
     }
-
   }
 </script>

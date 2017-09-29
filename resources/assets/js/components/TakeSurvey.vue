@@ -22,7 +22,8 @@
                                 <span class="select">
                                     <select v-model="question.answer">
                                         <option value="">Select An Answer</option>
-                                        <option v-for="option in question.options" :value="option.id">{{ option.label }}</option>
+                                        <option v-for="option in question.options" :value="option.id">{{ option.label
+                                            }}</option>
                                     </select>
                                 </span>
                             </div>
@@ -30,7 +31,8 @@
 
                     </div>
                     <div class="card-footer" v-if="!submitted">
-                        <button type="button" class="button is-fullwidth is-primary" @click="submitSurvey">Submit</button>
+                        <button type="button" class="button is-fullwidth is-primary" @click="submitSurvey">Submit
+                        </button>
                     </div>
                 </div>
             </div>
@@ -64,14 +66,14 @@
       getSurvey() {
         this.dataLoading = true;
         let survey_id = this.survey_id;
-        axios.get('/api/survey/'+survey_id).then(res => {
-            let data = res.data;
+        axios.get('/api/survey/' + survey_id).then(res => {
+          let data = res.data;
 
-            data.questions.forEach(question => {
-              question.answer = '';
-            });
-            this.survey = data;
-            this.dataLoading = false;
+          data.questions.forEach(question => {
+            question.answer = '';
+          });
+          this.survey = data;
+          this.dataLoading = false;
         })
 
       },
@@ -79,7 +81,7 @@
       submitSurvey() {
         let data = this.survey;
         axios.post('/api/survey/submit', data).then(res => {
-            this.submitted = true;
+          this.submitted = true;
         })
       }
 

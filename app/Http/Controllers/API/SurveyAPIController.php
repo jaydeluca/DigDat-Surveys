@@ -56,7 +56,6 @@ class SurveyAPIController extends Controller
      */
     public function store(Request $request)
     {
-
         $survey = $request->input('survey');
 
         $newSurvey = Survey::create([

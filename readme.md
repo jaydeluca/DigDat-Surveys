@@ -1,19 +1,12 @@
+## About
+Simple Survey system using Laravel Backend and Vue.js Frontend  
+Currently using Laravel 5.5
 
 ### Installation
 - `composer install`
 - `yarn`
 - `php artisan migrate`
 - `php artisan db:seed`
-
-#### Google Analytics
-***Deprecated...* alas, doesn't seem important for the time being**
-
-Reference the configuration docs from here: https://github.com/spatie/laravel-analytics
-
-You will need to do a few steps through your google API dashboard, and then using a JSON file they provide,
-add it to the project at: storage/app/laravel-google-analytics/service-account-credentials.json
-
-Note: This file is not, and should not be version controlled, so you **will need** to manually add it.
 
 ## TODO FOR V0.1
 - ~~Associate Surveys with users~~

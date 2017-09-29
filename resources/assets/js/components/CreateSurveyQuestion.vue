@@ -1,5 +1,4 @@
 <template>
-
     <div class="box has-text-dark">
         <strong class="is-required">Add A Question</strong>
         <div class="field">
@@ -11,7 +10,8 @@
 
         <ul>
             <li v-for="option in question.options">
-                {{ option.label }} <template v-if="option.value">({{ option.value }})</template>
+                {{ option.label }}
+                <template v-if="option.value">({{ option.value }})</template>
                 <span class="u-margin-left u-button-like" @click="removeOption(option)">
                     <i class="fa fa-minus-circle"></i>
                 </span>
@@ -41,13 +41,10 @@
 
         <button class="button is-primary" @click="saveQuestion" :disabled="disableSave">Save</button>
     </div>
-
 </template>
 
 <script>
-
   export default {
-
     name: 'SurveyQuestion',
 
     data() {
@@ -81,7 +78,7 @@
 
       addOption() {
         this.question.options.push(this.option);
-        this.option =  {
+        this.option = {
           label: '',
           value: ''
         }
@@ -90,7 +87,6 @@
       removeOption(option) {
         let index = this.question.options.indexOf(option);
         this.question.options.splice(index, 1);
-
       },
 
       saveQuestion() {
@@ -103,5 +99,4 @@
 
     }
   }
-
 </script>

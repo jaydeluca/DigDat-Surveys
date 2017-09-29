@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
-use Illuminate\Http\Request;
 use App\Survey;
-use App\Answer;
-use App\Question;
 use App\Http\Controllers\Controller;
 
 class AnswersAPIController extends Controller
@@ -19,7 +16,6 @@ class AnswersAPIController extends Controller
      */
     public function show(Survey $id)
     {
-
         $questions = Survey::find($id->id)->questions()->get()->map(function ($item) {
             $item["options"] = $item->options()->get()->map(function ($option) {
                 return [
