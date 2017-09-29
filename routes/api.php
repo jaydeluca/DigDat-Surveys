@@ -23,6 +23,6 @@ Route::group([
 ], function () {
     Route::post('survey/submit', 'SurveyAPIController@submit');
     Route::post('survey/create', 'SurveyAPIController@store');
-    Route::get('survey/{id}', 'SurveyAPIController@show');
+    Route::get('survey/{survey}', 'SurveyAPIController@show');
     Route::get('answers/{id}', 'AnswersAPIController@show');
 });

@@ -16,12 +16,12 @@ class SurveyAPIController extends Controller
     /**
      * Get Individual Survey
      *
-     * @param Survey $id
+     * @param Survey $survey
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null|static|static[]
      */
-    public function show(Survey $id)
+    public function show(Survey $survey)
     {
-        return Survey::with('questions', 'questions.options')->find($id);
+        return Survey::with('questions', 'questions.options')->find($survey->id);
     }
 
     /**
