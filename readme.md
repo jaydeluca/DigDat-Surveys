@@ -2,11 +2,30 @@
 Simple Survey system using Laravel Backend and Vue.js Frontend  
 Currently using Laravel 5.5
 
+## Requirements
+- PHP 7.0+
+- Laravel 5.5
+- MySQL 5+
+
 ### Installation
+
+#### quick setup.sh script (ymmv, tested under ubuntu)
+- `./setup.sh`
+
+#### enter commands manually
+- `chmod 777 storage/ -R`
+  - do these once... (the setup script handles skipping them)
+    - `cp .env.example .env`
+    - `editor .env`
+      - at the very least, edit the db connection settings
+    - `php artisan key:generate`
 - `composer install`
 - `yarn`
+- `mysql -u root -p -e 'CREATE DATABASE IF NOT EXISTS dd_surveys'`
+  - that's from the command line, or use your tool of choice to create the db
 - `php artisan migrate`
 - `php artisan db:seed`
+
 
 ## TODO FOR V0.1
 - ~~Associate Surveys with users~~
@@ -35,4 +54,4 @@ Currently using Laravel 5.5
 - Non-logged in users see prompt to register when trying to view results
 - Registered users can see survey results
 - If logged in user and survey owner, see detailed results link
-- If logged in user and not survey owen, see link for public results
+- If logged in user and not survey owned, see link for public results
