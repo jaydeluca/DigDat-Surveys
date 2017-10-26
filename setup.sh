@@ -1,5 +1,8 @@
 #!/bin/sh
-chmod 755 storage/ -R
+sudo usermod -a -G www-data $USER
+sudo find . -type f -exec chmod 664 {} \;
+sudo find . -type d -exec chmod 755 {} \;
+chmod +x setup.sh
 if [ ! -f .env ]; then
   cp .env.example .env
   editor .env
