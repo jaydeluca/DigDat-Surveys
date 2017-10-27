@@ -6,6 +6,7 @@ Currently using Laravel 5.5
 - PHP 7.0+
 - Laravel 5.5
 - MySQL 5+
+- nodejs 6+
 
 ### Installation
 
