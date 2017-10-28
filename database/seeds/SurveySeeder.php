@@ -14,37 +14,34 @@ class SurveySeeder extends Seeder
      */
     public function run()
     {
-
         Survey::truncate();
         Question::truncate();
         Option::truncate();
+      	$files = ['database/data/survey-football-1.json',
+                  'database/data/survey-patriots.json'
+                 ];
+      	foreach($files as $file) {
+      		$data = File::get($file);
+      		$survey_seed = collect(json_decode($data))[0];
 
-        $data = File::get('database/data/questions-1.json');
-        $questions = collect(json_decode($data));
+      		$survey = Survey::create([
+      		    'user_id' => 1,
+      		    'name' => $survey_seed->name,
+              'description' => $survey_seed->description
+      		]);
 
-        $survey = Survey::create([
-            'user_id' => 1,
-            'name' => "Football Teamss"
-        ]);
+      		foreach ($survey_seed->questions as $question) {
+      		     $new_question = $survey->questions()->create([
+      			     'question' => $question->question,
+      		    ]);
 
-        foreach ($questions as $question) {
-             $question = $survey->questions()->create([
-                'question' => $question->question,
-            ]);
-
-             print_r(collect($question->options[0]));
-
-//             $question->options()->create([
-//                 'value' => $option
-//             ]);
-
-//            foreach ($question->options as $option) {
-//                Option::create([
-//                    'question_id' => $question->id,
-//                    'value' => $option
-//                ]);
-//            }
-        }
-
+      		    foreach ($question->options as $option) {
+            			$new_question->options()->create([
+                      'label' => $option,
+            			    'value' => $option
+            			]);
+    		      }
+      		}
+      	}
     }
 }
