@@ -12,4 +12,4 @@ Homestead.yaml
 .env
 
 *.DS_Store
-npm-debug.log
+/npm-*.log
