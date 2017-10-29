@@ -1,6 +1,7 @@
 .nav {
   background: $color-background;
-  height: 6.25rem;
+  //height: 6.25rem;
+  display: block;
 
   .nav-right {
     align-items: center;
@@ -24,11 +25,12 @@ a.logo {
 }
 
 .nav-item a:hover, a.nav-item:hover {
-  color: $color-accent;
+  color: $light;
   transform: translateY(-3px) scale(1.0);
 }
 
 .nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
+  color: #FFFFFF;
   border-color: transparent;
 }
 
@@ -40,7 +42,7 @@ a.nav-item.is-tab {
 }
 
 a.nav-item.is-tab:hover {
-    color: #FFFFFF;
+  color: $light;
   //border-bottom-color: #a01c27;
   //border-top-color: #a01c27;
 }
@@ -50,6 +52,7 @@ a.nav-item.is-tab:hover {
 }
 
 .nav-toggle:hover {
+  color: $light;
   background-color: transparent;
   span {
     background-color: $color-accent;
@@ -105,6 +108,7 @@ a.nav-item.is-tab:hover {
     padding: 7px 40px;
 
     &:hover {
+      color: $light;
       background: #dadada;
     }
 
