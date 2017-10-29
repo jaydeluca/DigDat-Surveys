@@ -27,6 +27,10 @@ Currently using Laravel 5.5
 - `php artisan migrate`
 - `php artisan db:seed`
 
+## Google Analytics support (optional)
+If you'd like to use Google Analytics, simply enter your
+[property ID](https://support.google.com/analytics/answer/1008080) (UA code) in
+the GOOGLE_ANALYTICS_UA parameter in your `.env` file
 
 ## TODO FOR V0.1
 - ~~Associate Surveys with users~~
@@ -35,7 +39,7 @@ Currently using Laravel 5.5
 - Add Survey status - maybe optional expiration date?
 - Survey GUI/CRUD for creating surveys (in progress)
 - Survey URLS (slugs & user namespace?)
-- Remove Google Analytics stuff
+- ~~Remove Google Analytics stuff (kind of)~~
 - Email Reporting
 - Layout overhaul: get some love from Eric
 - Survey Page Titles
