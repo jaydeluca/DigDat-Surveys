@@ -30,6 +30,10 @@
           flex-basis: 0;
           justify-content: center;
         }
+        > .label {
+          font-weight: normal;
+          justify-content: left;
+        }
 
         flex-grow: 0;
         flex-basis: 33%;
