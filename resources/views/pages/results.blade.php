@@ -22,9 +22,13 @@
                     <div class="columns answers">
                         @foreach ($question->options as $option)
                             <div class="column option">
-                                <span>{{ $option["option"] }}</span>
+                                <span class="label">{{ $option["option"] }}</span>
                                 <strong>{{ $option["count"] }}</strong>
-                                <percentage count="{{ $option["count"] }}" total="{{ $question->total }}"></percentage>
+                                @if ($question->total)
+                                    <percentage count="{{ $option["count"] }}" total="{{ $question->total }}"></percentage>
+                                @else
+                                    <span>(0%)<span/>
+                                @endif
                             </div>
                         @endforeach
                     </div>
