@@ -24,11 +24,7 @@
                             <div class="column option">
                                 <span class="label">{{ $option["option"] }}</span>
                                 <strong>{{ $option["count"] }}</strong>
-                                @if ($question->total)
-                                    <percentage count="{{ $option["count"] }}" total="{{ $question->total }}"></percentage>
-                                @else
-                                    <span>(0%)<span/>
-                                @endif
+                                <percentage count="{{ $option["count"] }}" total="{{ $question->total }}"></percentage>
                             </div>
                         @endforeach
                     </div>

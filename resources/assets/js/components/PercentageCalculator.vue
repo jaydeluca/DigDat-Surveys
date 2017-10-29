@@ -10,7 +10,7 @@
     props: ['count', 'total'],
     computed: {
       result() {
-        if (this.count) {
+        if (this.total && this.total > 0) {
           return Math.round((this.count / this.total) * 100);
         }
         return 0;
