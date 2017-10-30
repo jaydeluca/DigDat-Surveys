@@ -24,7 +24,14 @@
                 <span class="title is-4">Questions:</span>
 
                 <div class="box" v-for="question in survey.questions">
-                    <strong>{{ question.question }}</strong>
+                    <div class="columns">
+                        <div class="column is-10">
+                            <strong>{{ question.question }}</strong>
+                        </div>
+                        <div class="column is-2">
+                            <button class="button is-primary" @click="removeQuestion(question)">remove</button>
+                        </div>
+                    </div>
                     <hr>
 
                     <ul>
@@ -102,6 +109,10 @@
         }
       },
 
+      removeQuestion(question) {
+          let index = this.survey.questions.indexOf(question);
+          this.survey.questions.splice(index, 1);
+      }
     },
 
     components: {
