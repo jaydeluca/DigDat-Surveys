@@ -76,12 +76,24 @@
 
     methods: {
 
-      addOption() {
-        this.question.options.push(this.option);
+      emptyOption() {
         this.option = {
           label: '',
           value: ''
         }
+      },
+
+      emptyQuestion() {
+        this.question = {
+          question: '',
+          options: []
+        }
+        this.emptyOption();
+      },
+
+      addOption() {
+        this.question.options.push(this.option);
+        this.emptyOption();
       },
 
       removeOption(option) {
@@ -91,11 +103,8 @@
 
       saveQuestion() {
         AppEvents.$emit('save-question', this.question);
-        this.question = {
-          question: '',
-          options: []
-        }
-      }
+        this.emptyQuestion();
+      },
 
     }
   }

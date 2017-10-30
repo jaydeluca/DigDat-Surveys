@@ -64,6 +64,51 @@ body {
   flex-direction: column;
 }
 
+/* Some placeholder trickery */
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  color: $color-light-grey;
+}
+input:focus::-webkit-input-placeholder {
+  color:transparent;
+}
+textarea:focus::-webkit-input-placeholder {
+  color:transparent;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+  color: $color-light-grey;
+}
+input:focus::-moz-placeholder {
+  color:transparent;
+}
+textarea:focus::-moz-placeholder {
+  color:transparent;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder {
+  color: $color-light-grey;
+}
+input:focus:-ms-input-placeholder {
+  color:transparent;
+}
+textarea:focus:-ms-input-placeholder {
+  color:transparent;
+}
+
+/* Firefox 4 - 18 */
+:-moz-placeholder {
+  color: $color-light-grey;
+}
+input:focus:-moz-placeholder {
+  color:transparent;
+}
+textarea:focus:-moz-placeholder {
+  color:transparent;
+}
+
 #app {
   flex-grow: 1;
 }

@@ -6,8 +6,10 @@
                     <div class="field">
                         <label class="label is-required">Name</label>
                         <p class="control">
-                            <input class="input" type="text" placeholder="Ex. Patriots Fan Survey"
-                                   v-model="survey.name">
+                            <input class="input" type="text"
+                                   placeholder="Ex. Patriots Fan Survey"
+                                   v-model="survey.name"
+                            />
                         </p>
                     </div>
                     <div class="field">
@@ -20,17 +22,29 @@
                         </p>
                     </div>
                 </div>
-
-                <span class="title is-4">Questions:</span>
-
+                <div class="columns">
+                    <div class="column is-8">
+                        <span class="title is-4">Questions:</span>
+                    </div>
+                </div>
                 <div class="box" v-for="question in survey.questions">
-                    <strong>{{ question.question }}</strong>
-                    <hr>
+                    <div class="columns">
+                        <div class="column is-10 nopad">
+                            <strong>{{ question.question }}</strong>
+                        </div>
+                        <div class="column is-2 nopad">
+                            <button class="button is-secondary"
+                                    @click="removeQuestion(question)">
+                                    remove
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="survey">
 
-                    <ul>
+                    <ul class="survey">
                         <li v-for="option in question.options">
-                            {{ option.label }}
-                            <template v-if="option.value">({{ option.value }})</template>
+                          <span class="is-offset-2">{{ option.label }}</span>
+                          <template v-if="option.value">({{ option.value }})</template>
                         </li>
                     </ul>
                 </div>
@@ -102,6 +116,10 @@
         }
       },
 
+      removeQuestion(question) {
+          let index = this.survey.questions.indexOf(question);
+          this.survey.questions.splice(index, 1);
+      }
     },
 
     components: {
