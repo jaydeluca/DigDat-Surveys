@@ -15,11 +15,15 @@
                                     <a href="{{ $survey->path() }}">
                                         {{ $survey->name }}
                                     </a>
+                                    <span>
+                                        {{ $survey->created_at }}
+                                    </span>
                                     <a href="">
                                         Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </a>
-                                    <a href="/results/{{ $survey->id }}">
-                                        Results <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                    <a href="{{ $survey->path() }}/results">
+                                        Results ({{ $survey->submissions()->count() }})
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
                                     </a>
                                 </li>
                             @endforeach
@@ -40,6 +44,12 @@
                                     <a href="{{ $survey->path() }}">
                                         {{ $survey->name }}
                                     </a>
+                                    <span>
+                                        {{ $survey->created_at }}
+                                    </span>
+                                    <span>
+                                        {{ $survey->submissions()->count() }} Submissions
+                                    </span>
                                 </li>
                             @endforeach
                         </ul>
