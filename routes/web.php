@@ -28,5 +28,6 @@ Auth::routes();
 
 // Public Survey Pages
 Route::get('/surveys', 'SurveyController@index')->name('all-public-surveys');
+Route::get('/surveys/{user_slug}', 'SurveyController@index')->name('user-surveys');
 Route::get('/surveys/{user_slug}/{survey}', 'SurveyController@show');
 Route::get('/surveys/{user_slug}/{survey}/results', 'SurveyController@resultsPage');
