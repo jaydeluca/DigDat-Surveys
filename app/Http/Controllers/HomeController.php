@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function home(Request $request)
     {
-        $latest_surveys = Survey::all()->take(5);
+        $latest_surveys = Survey::orderBy('created_at', 'DESC')->take(5)->get();
         $user_surveys = $request->user()->surveys()->get();
         return view('pages.home')->with(compact('latest_surveys', 'user_surveys'));
     }
