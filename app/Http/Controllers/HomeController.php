@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Survey;
 
@@ -15,7 +16,6 @@ class HomeController extends Controller
     {
         // get 3 surveys for front page
         $surveys = Survey::all()->take(3);
-
         return view('pages.welcome')->with(compact('surveys'));
     }
 
