@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
 use App\Survey;
 use JavaScript;
 
@@ -14,9 +16,20 @@ class SurveyController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index($user_slug=null)
     {
-        $surveys = Survey::with(['submissions', 'questions'])->get();
+        if (!$user_slug){
+            $surveys = Survey::with(['submissions', 'questions'])->get();
+        } else {
+            $user = User::where('slug', $user_slug)->first();
+            if (!$user){
+                return abort(404);
+            } else {
+                $surveys = Survey::where('user_id', $user->id)
+                                 ->with(['submissions', 'questions']
+                                 )->get();
+             }
+        }
         return view('pages.surveys')->with(compact('surveys'));
     }
 

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -39,4 +40,21 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Survey');
     }
+
+    public function path()
+    {
+        return rtrim(env('APP_URL'),'/') . '/surveys/' . $this->slug . '/';
+    }
+
+    /**
+     * Mutate to show as diff for humans
+     *
+     * @param $value
+     * @return string
+     */
+    public function getCreatedAtAttribute($value)
+    {
+        return $this->attributes['created_at'] = Carbon::parse($value)->diffForHumans();
+    }
+
 }

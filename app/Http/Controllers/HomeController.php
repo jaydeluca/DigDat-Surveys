@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Survey;
 
@@ -15,7 +16,6 @@ class HomeController extends Controller
     {
         // get 3 surveys for front page
         $surveys = Survey::all()->take(3);
-
         return view('pages.welcome')->with(compact('surveys'));
     }
 
@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function home(Request $request)
     {
-        $latest_surveys = Survey::all()->take(5);
+        $latest_surveys = Survey::orderBy('created_at', 'DESC')->take(5)->get();
         $user_surveys = $request->user()->surveys()->get();
         return view('pages.home')->with(compact('latest_surveys', 'user_surveys'));
     }
