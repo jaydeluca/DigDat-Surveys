@@ -18,19 +18,20 @@ class SurveyController extends Controller
      */
     public function index($user_slug=null)
     {
+        $owner = null;
         if (!$user_slug){
             $surveys = Survey::with(['submissions', 'questions'])->get();
         } else {
-            $user = User::where('slug', $user_slug)->first();
-            if (!$user){
+            $owner = User::where('slug', $user_slug)->first();
+            if (!$owner){
                 return abort(404);
             } else {
-                $surveys = Survey::where('user_id', $user->id)
+                $surveys = Survey::where('user_id', $owner->id)
                                  ->with(['submissions', 'questions']
                                  )->get();
              }
         }
-        return view('pages.surveys')->with(compact('surveys'));
+        return view('pages.surveys')->with(compact('surveys','owner'));
     }
 
     /**

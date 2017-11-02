@@ -7,7 +7,13 @@
             <div class="container">
                 <div class="card">
                     <div class="card-header background-accent">
-                        <p class="card-header-title">Surveys</p>
+                        <p class="card-header-title">
+                        @if($owner)
+                            Active Surveys by {{$owner->name}}
+                        @else
+                            All Active Surveys
+                        @endif
+                        </p>
                     </div>
                     <div class="card-content">
                         <table class="table">
@@ -26,8 +32,8 @@
                                             {{ $survey->name }}
                                         </a>
                                     </td>
-                                    <td>{{ count($survey->questions) }}</td>
-                                    <td>{{ count($survey->submissions) }}</td>
+                                    <td>{{ $survey->questions->count() }}</td>
+                                    <td>{{ $survey->submissions->count() }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
