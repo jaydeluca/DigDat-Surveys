@@ -13,6 +13,20 @@ class Survey extends Model
         'description'
     ];
 
+    /** somethings we want to run without Observers/ServiceProviders  */
+    public static function boot()
+    {
+        self::creating(function($s){
+            $s->slug = str_slug($s->name);
+        });
+
+        self::updating(function($s){
+            $s->slug = str_slug($s->name);
+        });
+
+    }
+
+
     /**
      * Get a string path for survey
      *
@@ -73,5 +87,6 @@ class Survey extends Model
     {
         return $this->attributes['created_at'] = Carbon::parse($value)->diffForHumans();
     }
+
 
 }
