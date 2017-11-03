@@ -10,15 +10,16 @@
                                    placeholder="Ex. Patriots Fan Survey"
                                    v-model="survey.name"
                             />
+                            <span v-if="errors['survey.name']" class="help-block">{{ errors['survey.name'][0] }}</span>
                         </p>
                     </div>
                     <div class="field">
                         <p class="control">
-                            <textarea
-                                    class="textarea"
-                                    placeholder="Description (optional)"
-                                    v-model="survey.description">
-                            </textarea>
+                            <textarea class="textarea"
+                                      placeholder="Description (optional)"
+                                      v-model="survey.description"/>
+                            <span v-if="errors['survey.description']"
+                                  class="help-block">{{ errors['survey.description'][0] }}</span>
                         </p>
                     </div>
                 </div>
@@ -81,6 +82,7 @@
         },
         option: '',
         question_count: 1,
+        errors: {},
       }
     },
 
@@ -91,7 +93,7 @@
     computed: {
 
       saveValidation() {
-        return !this.survey.name || this.survey.questions.length < 2
+        return !this.survey.name.trim() || this.survey.questions.length < 2
       },
 
     },
@@ -103,9 +105,12 @@
           survey: this.survey,
           user_id: window.user_id
         };
-        axios.post('/api/survey/create', data).then(res => {
-          this.submitted = true;
-          window.location = res.data;
+        axios.post('/api/survey/create', data)
+          .then(res => {
+            this.submitted = true;
+            window.location = res.data;
+         }).catch(error => {
+           this.errors = error.response.data.errors;
         })
       },
 
