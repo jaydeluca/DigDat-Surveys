@@ -25,17 +25,23 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($surveys as $survey)
+                                @if (!$surveys->count())
                                 <tr>
-                                    <td>
-                                        <a href="{{ $survey->path() }}">
-                                            {{ $survey->name }}
-                                        </a>
-                                    </td>
-                                    <td>{{ $survey->questions->count() }}</td>
-                                    <td>{{ $survey->submissions->count() }}</td>
+                                    <td>No Active surveys</td>
                                 </tr>
-                            @endforeach
+                            @else
+                                @foreach ($surveys as $survey)
+                                    <tr>
+                                        <td>
+                                            <a href="{{ $survey->path() }}">
+                                                {{ $survey->name }}
+                                            </a>
+                                        </td>
+                                        <td>{{ $survey->questions->count() }}</td>
+                                        <td>{{ $survey->submissions->count() }}</td>
+                                    </tr>
+                                @endforeach
+                            @endif
                             </tbody>
                         </table>
                     </div>
