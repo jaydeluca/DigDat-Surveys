@@ -65,8 +65,8 @@
 
       getSurvey() {
         this.dataLoading = true;
-        let survey_id = this.survey_id;
-        axios.get('/api/survey/' + survey_id).then(res => {
+        let survey_slug = window.survey.slug;
+        axios.get('/api/survey/' + survey_slug).then(res => {
           let data = res.data;
 
           data.questions.forEach(question => {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateSurveyPost;
 use App\Survey;
 use App\Question;
 use App\Option;
@@ -54,7 +55,7 @@ class SurveyAPIController extends Controller
      * @param Request $request
      * @return string
      */
-    public function store(Request $request)
+    public function store(CreateSurveyPost $request)
     {
         $survey = $request->input('survey');
 

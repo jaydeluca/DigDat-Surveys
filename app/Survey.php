@@ -13,6 +13,20 @@ class Survey extends Model
         'description'
     ];
 
+    /** somethings we want to run without Observers/ServiceProviders  */
+    public static function boot()
+    {
+        self::creating(function($s){
+            $s->slug = str_slug($s->name);
+        });
+
+        self::updating(function($s){
+            $s->slug = str_slug($s->name);
+        });
+
+    }
+
+
     /**
      * Get a string path for survey
      *
@@ -20,7 +34,7 @@ class Survey extends Model
      */
     public function path()
     {
-        return $this->user->path() . $this->id;
+        return $this->user->path() . $this->slug;
     }
 
     /**
@@ -72,6 +86,16 @@ class Survey extends Model
     public function getCreatedAtAttribute($value)
     {
         return $this->attributes['created_at'] = Carbon::parse($value)->diffForHumans();
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
 }
