@@ -61,7 +61,7 @@ class SurveyController extends Controller
     {
         $survey = Survey::create($request->all());
 
-        return redirect('/surveys/'.$survey->id);
+        return redirect('/surveys/'.$survey->slug);
     }
 
     /**

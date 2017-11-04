@@ -34,7 +34,7 @@ class Survey extends Model
      */
     public function path()
     {
-        return $this->user->path() . $this->id;
+        return $this->user->path() . $this->slug;
     }
 
     /**
@@ -88,5 +88,14 @@ class Survey extends Model
         return $this->attributes['created_at'] = Carbon::parse($value)->diffForHumans();
     }
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
 }
