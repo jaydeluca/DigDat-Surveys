@@ -25,11 +25,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Survey::class, function (Faker\Generator $faker) {
+    $name = $faker->streetName;
     return [
         'user_id' => function () {
             return factory('App\User')->create()->id;
         },
-        'name' => $faker->streetName
+        'name' => $name,
+        'slug' => str_slug($name)
     ];
 });
 
