@@ -18,7 +18,7 @@ class CreateSurveyTest extends TestCase
         // endpoint is hit for a new survey, should redirect to see survey
         $survey = make('App\Survey');
         $this->post('/surveys', $survey->toArray())
-            ->assertRedirect('/surveys/1');
+             ->assertRedirect('/surveys/'.$survey->slug);
     }
 
     /** @test */
