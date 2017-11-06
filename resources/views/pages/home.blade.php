@@ -43,6 +43,7 @@
                         </div>
                         <div class="card-content">
                             <ul class="u-nice-list">
+                            @if($user_surveys->count()>0)
                                 @foreach ($user_surveys as $survey)
                                     <li>
                                         <a href="{{ $survey->path() }}">
@@ -60,8 +61,16 @@
                                         </a>
                                     </li>
                                 @endforeach
+                            @else
+                                <li>
+                                    <a href="{{ route('create-survey') }}">
+                                        None yet, create one?
+                                    </a>
+                                </li>
+                            @endif
                             </ul>
                         </div>
+
                     </div>
                 </div>
 
