@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -47,9 +48,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $data['slug'] = str_slug($data['slug']);
+        request()->replace($data);
+        session(['slug', $data['slug']]);
+        session()->save();
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'name' => 'required|max:191',
+            'email' => 'required|email|max:191|unique:users',
             'slug' => 'required|max:40|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -65,7 +70,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'slug' => $data['slug'],
+            'slug' => str_slug($data['slug']),
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
