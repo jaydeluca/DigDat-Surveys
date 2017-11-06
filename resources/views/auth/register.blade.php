@@ -29,7 +29,7 @@
 
                                 <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
                                     <label class="label">Public URL for your Surveys</label>
-                                    <p style="margin: 10px 5px;">If you create surveys, they will be located at: digdatsurveys.com/your-public-url/survey-name</p>
+                                    <p style="margin: 10px 5px;">If you create surveys, they will be located at: <br/>{{env('APP_URL')}}your-public-url/survey-name</p>
                                     <p class="control">
                                         <input id="slug"
                                                placeholder="Ex: joes-surveys"
@@ -92,4 +92,5 @@
             </div>
         </div>
     </section>
+
 @endsection
