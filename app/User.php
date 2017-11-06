@@ -31,6 +31,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /** somethings we want to run without Observers/ServiceProviders  */
+    public static function boot()
+    {
+        self::creating(function($u){
+            $u->slug = str_slug($u->slug);
+        });
+
+    }
+
     /**
      * Surveys the user created / owns
      *
@@ -55,6 +64,16 @@ class User extends Authenticatable
     public function getCreatedAtAttribute($value)
     {
         return $this->attributes['created_at'] = Carbon::parse($value)->diffForHumans();
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
 }
