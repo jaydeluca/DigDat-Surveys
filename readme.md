@@ -67,3 +67,7 @@ Browser Tests: `php artisan dusk`
 - Registered users can see survey results
 - If logged in user and survey owner, see detailed results link
 - If logged in user and not survey owned, see link for public results
+
+
+## Notes
+- Try and include unique ID's to button elements for easier testing

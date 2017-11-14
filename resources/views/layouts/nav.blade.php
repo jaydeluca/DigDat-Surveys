@@ -21,11 +21,19 @@
             @if (Auth::guest())
                 <a class="nav-item is-tab" href="{{ route('all-public-surveys') }}">Browse Surveys</a>
                 <a class="nav-item is-tab is-hidden-tablet" href="{{ route('create-survey') }}">Create a Survey</a>
-                <a class="button c-btn c-btn--primary is-hidden-custom" href="{{ route('create-survey') }}">Create a Survey</a>
+                <a class="button c-btn c-btn--primary is-hidden-custom"
+                   href="{{ route('create-survey') }}"
+                   id="nav-create-survey">
+                    Create a Survey
+                </a>
                 <a class="nav-item is-tab" href="{{ route('login') }}">Login</a>
             @else
                 <a class="nav-item is-tab" href="{{ route('all-public-surveys') }}">Browse Surveys</a>
-                <a class="button c-btn c-btn--primary is-hidden-custom" href="{{ route('create-survey') }}">Create a Survey</a>
+                <a class="button c-btn c-btn--primary is-hidden-custom"
+                   href="{{ route('create-survey') }}"
+                   id="nav-create-survey">
+                    Create a Survey
+                </a>
                 <div class="has-dropdown my-account">
                     <input type="checkbox" id="ch1">   <!-- note: id -->
 
