@@ -1,14 +1,16 @@
-## About
+# DigDat Surveys
 Simple Survey system using Laravel Backend and Vue.js Frontend  
-Currently using Laravel 5.5
+Users can register and create surveys, which they can share with the public. Publicly available results will be provided,
+ as well as some data visualization and more detailed data for the survey creator.
 
-## Requirements
+
+## Getting Started
+
+### Requirements
 - PHP 7.0+
 - Laravel 5.5
 - MySQL 5+
 - nodejs 6+
-
-### Installation
 
 #### quick setup.sh script (ymmv, tested under ubuntu)
 - `./setup.sh`
@@ -27,10 +29,14 @@ Currently using Laravel 5.5
 - `php artisan migrate`
 - `php artisan db:seed`
 
-## Google Analytics support (optional)
+### Google Analytics support (optional)
 If you'd like to use Google Analytics, simply enter your
 [property ID](https://support.google.com/analytics/answer/1008080) (UA code) in
 the GOOGLE_ANALYTICS_UA parameter in your `.env` file
+
+## Tests
+PHPUnit Tests: `phpunit`  
+Browser Tests: `php artisan dusk`
 
 ## TODO FOR V0.1
 - ~~Associate Surveys with users~~
@@ -45,6 +51,7 @@ the GOOGLE_ANALYTICS_UA parameter in your `.env` file
 - Survey Page Titles
 - Public / Private?
 - Users can 'subscribe' to surveys. When survey is completed, they can get an email with results
+- Data Visualizations of results (for creator)
 
 ## Pages
 - Survey Create (must be logged in)

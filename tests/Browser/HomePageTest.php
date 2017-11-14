@@ -17,7 +17,7 @@ class HomePageTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->assertSee('Welcome to DigDat');
+                    ->assertSee('Create. Collect. Customize.');
         });
     }
 }
