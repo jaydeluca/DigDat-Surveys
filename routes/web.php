@@ -11,7 +11,6 @@
 |
 */
 
-
 // Must be logged in
 Route::group(['middleware' => 'auth'], function () {
 
@@ -28,6 +27,6 @@ Auth::routes();
 
 // Public Survey Pages
 Route::get('/surveys', 'SurveyController@index')->name('all-public-surveys');
-Route::get('/surveys/{user_slug}', 'SurveyController@index')->name('user-surveys');
-Route::get('/surveys/{user_slug}/{survey}', 'SurveyController@show');
-Route::get('/surveys/{user_slug}/{survey}/results', 'SurveyController@resultsPage');
+Route::get('/surveys/{user?}', 'SurveyController@index')->name('user-surveys');
+Route::get('/surveys/{user}/{survey}', 'SurveyController@show');
+Route::get('/surveys/{user}/{survey}/results', 'SurveyController@resultsPage');
