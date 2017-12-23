@@ -13,11 +13,12 @@
         "nothingworks/blade-svg": "^0.1.1"
     },
     "require-dev": {
+        "codedungeon/phpunit-result-printer": "^0.4.4",
+        "doctrine/dbal": "~2.5",
+        "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~6.0",
-        "filp/whoops": "~2.0",
-        "doctrine/dbal": "~2.5"
+        "phpunit/phpunit": "~6.0"
     },
     "autoload": {
         "classmap": [

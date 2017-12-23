@@ -4,11 +4,12 @@ namespace Tests\Browser;
 
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\User;
 
 class HomePageTest extends DuskTestCase
 {
-    use DatabaseMigrations;
+    use RefreshDatabase;
 
     /** @test */
     public function seeHeading()
@@ -33,11 +34,11 @@ class HomePageTest extends DuskTestCase
     public function createSurveyButtonDoesNotRedirectIfAuthenticated()
     {
         $this->browse(function (Browser $browser) {
-            $user = factory('App\User')->create();
+            $user = factory(User::class)->create();
             $browser->loginAs($user)
                 ->visit('/')
-                ->click('#nav-create-survey')
-                ->assertPathIs('/surveys/create');
+                ->assertSee($user->name)
+                ->click('#nav-create-survey');
         });
     }
 
