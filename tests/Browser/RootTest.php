@@ -5,10 +5,10 @@ namespace Tests\Browser;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\Browser\Pages\Home;
+use Tests\Browser\Pages\Root;
 use App\User;
 
-class HomeTest extends DuskTestCase
+class RootTest extends DuskTestCase
 {
     use DatabaseMigrations;
 
@@ -16,7 +16,7 @@ class HomeTest extends DuskTestCase
     public function createSurveyButtonRedirectsUnauthenticatedUser()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(new Home)
+            $browser->visit(new Root)
                     ->click('#nav-create-survey')
                     ->assertPathIs('/login');
         });
@@ -28,7 +28,7 @@ class HomeTest extends DuskTestCase
         $user = factory(User::class)->create();
         $this->browse(function (Browser $browser) use ($user) {
             $browser->loginAs($user)
-                ->visit(new Home)
+                ->visit(new Root)
                 ->assertSee('My Account')
                 ->click('.my-account')
                 ->waitForText($user->name)
