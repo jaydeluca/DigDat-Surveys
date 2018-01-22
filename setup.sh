@@ -11,6 +11,10 @@ if [ ! -f .env ]; then
   editor .env
   php artisan key:generate
 fi
+if [ ! -f .env.dusk,local ]; then
+  cp .env.dusk.example .env.dusk.local
+fi
+
 composer install
 yarn
 mysql -u root -p"$(grep -E 'DB_PASSWORD=(.*)' .env | sed 's/DB_PASSWORD=//1')" -e 'CREATE DATABASE IF NOT EXISTS dd_surveys'

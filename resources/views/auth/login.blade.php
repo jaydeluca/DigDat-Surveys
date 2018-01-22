@@ -5,7 +5,7 @@
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-vcentered">
-                    <div class="column is-5 is-offset-1">
+                    <div id="login" class="column is-5 is-offset-1">
                         <h1 class="title">
                             Login
                         </h1>
@@ -42,17 +42,17 @@
                                 </p>
                                 <br />
 
-                                <button type="submit" class="button is-fullwidth is-primary">Login</button>
+                                <button type="submit" id="login-btn" class="button is-fullwidth is-primary">Login</button>
                                 <br />
 
-                                <a class="button is-fullwidth" href="{{ route('password.request') }}">
+                                <a id="forgot-btn" class="button is-fullwidth" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
                             </form>
                         </div>
                     </div>
 
-                    <div class="column is-5">
+                    <div id="register" class="column is-5">
                         <div class="card">
                             <div class="card-content">
                                 <h1 class="title">Need an Account?</h1>

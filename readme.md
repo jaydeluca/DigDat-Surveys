@@ -26,6 +26,8 @@ Users can register and create surveys, which they can share with the public. Pub
 - `yarn`
 - `mysql -u root -p -e 'CREATE DATABASE IF NOT EXISTS dd_surveys'`
   - that's from the command line, or use your tool of choice to create the db
+  - for testing, create a testing db
+    - `mysql -u root -p -e 'CREATE DATABASE IF NOT EXISTS dd_surveys_test'`
 - `php artisan migrate`
 - `php artisan db:seed`
 
@@ -37,11 +39,16 @@ the GOOGLE_ANALYTICS_UA parameter in your `.env` file
 ## Tests
 PHPUnit Tests: `phpunit`  
 Browser Tests: `php artisan dusk`
+- if you'd like to run Browser tests...
+    - copy `.env.dusk.example` to `.env.dusk.local`
+    - dusk test should run, play around with the environment as necessary
+    - __important__: if you did not create the test db above or did not create the `env.dusk.local` file and 
+    run dusk tests, your db will be obliterated. _You've been warned_     
 
 ## TODO FOR V0.1
 - ~~Associate Surveys with users~~
 - ~~Create an 'Option' Model for question options (adds more flexibility)~~
-- User Registration - slug validation
+- ~~User Registration - slug validation~~
 - Add Survey status - maybe optional expiration date?
 - Survey GUI/CRUD for creating surveys (in progress)
 - Survey URLS (slugs & user namespace?)
@@ -54,7 +61,7 @@ Browser Tests: `php artisan dusk`
 - Data Visualizations of results (for creator)
 
 ## Pages
-- Survey Create (must be logged in)
+- ~~Survey Create (must be logged in)~~
 - Survey Edit (must be logged in)
 - Survey Results (must be logged in)
 - Survey Display (public)
@@ -71,3 +78,4 @@ Browser Tests: `php artisan dusk`
 
 ## Notes
 - Try and include unique ID's to button elements for easier testing
+    - some done
