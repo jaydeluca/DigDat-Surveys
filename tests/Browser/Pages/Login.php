@@ -3,9 +3,11 @@
 namespace Tests\Browser\Pages;
 
 use Laravel\Dusk\Browser;
+use Laravel\Dusk\Page as BasePage;
 
-class HomePage extends Page
+class Login extends BasePage
 {
+    protected static $asserted = false;
     /**
      * Get the URL for the page.
      *
@@ -13,7 +15,7 @@ class HomePage extends Page
      */
     public function url()
     {
-        return '/';
+        return '/login';
     }
 
     /**
@@ -24,7 +26,14 @@ class HomePage extends Page
      */
     public function assert(Browser $browser)
     {
-        //
+        if (!static::$asserted) {
+            $browser->visit($this->url())
+                ->assertSeeIn('button[type=submit]', 'Login')
+                ->assertSeeIn('#login a.button', 'Forgot Your Password?')
+                ->assertSeeIn('#login h1.title', 'Login')
+                ->assertSeeIn('#register h1.title', 'Need an Account?');
+            static::$asserted = true;
+        }
     }
 
     /**
