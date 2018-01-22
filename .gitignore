@@ -10,6 +10,9 @@
 Homestead.json
 Homestead.yaml
 .env
+.env.dusk.*
+!.env.dusk.example
+
 /public/mix-manifest.json
 
 *.DS_Store
