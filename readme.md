@@ -41,8 +41,9 @@ PHPUnit Tests: `phpunit`
 Browser Tests: `php artisan dusk`
 - if you'd like to run Browser tests...
     - copy `.env.dusk.example` to `.env.dusk.local`
-    - dusk test should run, play around with the environment as necessary 
-    
+    - dusk test should run, play around with the environment as necessary
+    - __important__: if you did not create the test db above or did not create the `env.dusk.local` file and 
+    run dusk tests, your db will be obliterated. _You've been warned_     
 
 ## TODO FOR V0.1
 - ~~Associate Surveys with users~~
