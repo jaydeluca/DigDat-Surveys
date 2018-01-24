@@ -12,10 +12,10 @@
                         <div class="box">
 
                             <form role="form" method="POST" action="{{ route('register') }}">
-                            {{ csrf_field() }}
+                                {{ csrf_field() }}
 
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                    <label class="label">Name</label>
+                                    <label class="label" for="name">Name</label>
                                     <p class="control">
                                         <input id="name" type="text" class="input" name="name" value="{{ old('name') }}" required autofocus>
 
@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label class="label">E-Mail Address</label>
+                                    <label class="label" for="email">E-Mail Address</label>
 
                                     <p class="control">
                                         <input id="email" type="email" class="input" name="email" value="{{ old('email') }}" required>
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label class="label">Password</label>
+                                    <label class="label" for="password">Password</label>
 
                                     <p class="control">
                                         <input id="password" type="password" class="input" name="password" required>
@@ -76,7 +76,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="label">Confirm Password</label>
+                                    <label class="label" for="password-confirm">Confirm Password</label>
 
                                     <p class="control">
                                         <input id="password-confirm" type="password" class="input" name="password_confirmation" required>
