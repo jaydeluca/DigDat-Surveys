@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Carbon\Carbon;
+use App\Notifications\MailResetPasswordToken;
 
 class User extends Authenticatable
 {
@@ -53,6 +54,14 @@ class User extends Authenticatable
     public function path()
     {
         return rtrim(env('APP_URL'),'/') . '/surveys/' . $this->slug . '/';
+    }
+
+    /**
+     * Send a password reset email to the user
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new MailResetPasswordToken($this->getEmailForPasswordReset(), $token));
     }
 
     /**
