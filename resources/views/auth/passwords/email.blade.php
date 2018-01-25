@@ -9,11 +9,18 @@
                         <h1 class="title">
                             Reset Password
                         </h1>
+
                         <div class="box">
                             @if (session('status'))
                                 <div class="message is-success">
-                                    {{ session('status') }}
+                                    <span class="message-header">{{ session('status') }}</span>
                                 </div>
+                            @endif
+
+                            @if ($errors->has('invalid'))
+                                    <div class="message is-error">
+                                        <span class="message-header">{{$errors->first('invalid')}}</span>
+                                    </div>
                             @endif
                             <form role="form" method="POST" role="form" method="POST"
                                   action="{{ route('password.email') }}">
