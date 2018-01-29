@@ -43,13 +43,20 @@ class MailResetPasswordToken extends Notification
      */
     public function toMail($notifiable)
     {
-        $b64email = base64_encode($this->email);
         return (new MailMessage)
             ->subject(config('app.name'). ': Reset Password')
             ->line('You are receiving this email because we received a password reset request for your account.')
-            ->action('Reset Password', url(config('app.url') . route('password.reset', [$b64email, $this->token], false)))
+            ->action('Reset Password',
+                        url(config('app.url') . route('password.reset', [$this->getObfuscatedEmail(), $this->token],
+                        false)))
             ->line('If you did not request a password reset, no further action is required.');
     }
+
+    public function getObfuscatedEmail()
+    {
+        return base64_encode($this->email);
+    }
+
 
     /**
      * Get the array representation of the notification.
