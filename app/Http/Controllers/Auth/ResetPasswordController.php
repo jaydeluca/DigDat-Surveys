@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Contracts\Hashing\Hasher as HasherContract;
@@ -42,9 +43,10 @@ class ResetPasswordController extends Controller
     }
 
     /**
-     * Display the password reset view for the given token.
+     * Display the password reset view for the given request. Point being to be able to provide more accurate
+     * errors when things fail. This is ridiculous and should be built-in.
      *
-     * If no token is present, display the link request form.
+     * If the request is invalid (email, token [exact or timed]), display the link request form.
      *
      * @param  \Illuminate\Http\Request $request
      * @param  string|null $token
@@ -52,13 +54,8 @@ class ResetPasswordController extends Controller
      */
     public function showResetForm(Request $request, $email, $token = null)
     {
-        //this is ridiculous
-        $htoken = bcrypt($token);
+        $rec = PasswordReset::where('email', base64_decode($email))->first();
 
-        $rec = \DB::table('password_resets')
-                        ->where('email', base64_decode($email))
-                        //->where('created_at', '>', Carbon::now()->subMinutes(config('auth.passwords.users.expire')))
-                        ->first();
         if (!$rec) {
             return redirect()->route('password.request')->withErrors(
                 ['invalid' => 'Unknown email address. Please try again.']
