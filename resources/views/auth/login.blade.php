@@ -14,7 +14,7 @@
                                 {{ csrf_field() }}
 
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label class="label">Email</label>
+                                    <label class="label" for="email">Email</label>
                                     <p class="control">
                                         <input id="email" type="email" class="input" name="email" value="{{ old('email') }}" required autofocus>
                                         @if ($errors->has('email'))
@@ -26,7 +26,7 @@
                                 </div>
 
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label class="label">Password</label>
+                                    <label class="label" for="password">Password</label>
                                     <p class="control">
                                         <input id="password" type="password" class="input" name="password" required>
                                         @if ($errors->has('password'))
@@ -56,7 +56,7 @@
                         <div class="card">
                             <div class="card-content">
                                 <h1 class="title">Need an Account?</h1>
-                                <a href="/register" class="button is-fullwidth is-primary">Register for free</a>
+                                <a href="{{ route('register') }}" class="button is-fullwidth is-primary">Register for free</a>
 
                             </div>
                         </div>

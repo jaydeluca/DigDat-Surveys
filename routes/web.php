@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
 // Public Routes
 Route::get('/', 'HomeController@index');
 Auth::routes();
+//override the emailed link/route to accomodate the customizations to the flow...   
+Route::get('password/reset/{email}/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
 // Public Survey Pages
 Route::get('/surveys', 'SurveyController@index')->name('all-public-surveys');

@@ -51,3 +51,7 @@ $factory->define(App\Option::class, function (Faker\Generator $faker) {
         'value' => $option
     ];
 });
+
+$factory->define(App\PasswordReset::class, function () {
+    return [];
+});
