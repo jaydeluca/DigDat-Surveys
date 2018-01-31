@@ -18,9 +18,9 @@
                             @endif
 
                             @if ($errors->has('invalid'))
-                                    <div class="message is-error">
-                                        <span class="message-header">{{$errors->first('invalid')}}</span>
-                                    </div>
+                                <div class="message is-error">
+                                    <span class="message-header">{{$errors->first('invalid')}}</span>
+                                </div>
                             @endif
                             <form role="form" method="POST" role="form" method="POST"
                                   action="{{ route('password.email') }}">
